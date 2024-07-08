@@ -71,16 +71,16 @@ class Page404 extends Page {
   body() {
     const tit = `Ошбика: 404`
     const desc = `Ошбика 404`
-    const img = `https://sirseverin.ru/images/severin404.jpg`
+    const img = `https://sirseverin.ru/images/404.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
         E.h1.chi(this.title()),
         E.a.props({href: `/`, class: `error`}).chi(`Вернуться на главную`,
-          E.img.props({alt: `Severin404`, src: `/images/severin404.jpg`, class: `error`})
+          E.img.props({alt: `404`, src: `/images/404.jpg`, class: `error`})
         )        
       ),
-      FooterIbri(this)
+      Footer(this)
     )
   }
 }
@@ -93,7 +93,6 @@ class PageIndex extends Page {
   title() {return `Главная`}
 
   body() {
-  const principe =  Deno.readTextFileSync(`./data/principe.md`)
   const tit = `Ibri`
   const desc = `Ибри — авторские напитки. Продукция, идея, миксология.`
   const img = `https://sirseverin.ru/images/ibri.jpg`
@@ -104,13 +103,23 @@ class PageIndex extends Page {
           E.h1.chi(E.span.chi(`ИБРИ`), ` — ЭТО ЕЩЁ И ВКУСНЫЙ НАПИТОК`),
           E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
           E.div.chi(`Приветствуем тебя. Надеемся, что ты найдёшь здесь то, что ищешь. Будем!`)
-        ), 
-        E.principe.chi(E.div.chi(new p.Raw(marked(principe))))
+        ),
+        E.block.chi(
+          E.h2.chi(`ИДЕЯ`),
+          E.div.chi(data.i),
+          getItem(data.iImage)
+        )
       ),
-      FooterIbri(this)
+      Footer(this)
     )
   }
 }
+function getItem(a) {
+  return a.map((val) => { 
+    E.div.props({class: `idea-ingri`}).chi(E.img.props({src: val, alt: val}))
+  })
+}
+
 
 // Blog //
 class PageBlog extends Page {
@@ -127,7 +136,6 @@ class PageBlog extends Page {
         E.blog.chi(
           E.h2.chi(`Все публикации`),
           AllTags(this),
-          // list.slice(-3).map((val) => {
             data.list.map((val) => {
             return E.div.props({id: val.id, dataindex: val.dataindex, class: `filter`}).chi(
               E.span.chi(val.date),
@@ -142,7 +150,7 @@ class PageBlog extends Page {
           )
         )
       ),
-      FooterIbri(this)
+      Footer(this)
     )
   }
 }
@@ -167,7 +175,7 @@ class PageArticle extends Page {
       E.main.chi(
         E.article.chi(new p.Raw(marked(art1)))
       ),
-      FooterIbri(this)
+      Footer(this)
     )
   }
 }
@@ -223,7 +231,7 @@ class PageBookreview extends Page {
           )
         )
       ),
-      FooterIbri(this)
+      Footer(this)
     )
   }
 }
@@ -274,7 +282,7 @@ class PageCheese extends Page {
           )
         )
       ),
-      FooterIbri(this)
+      Footer(this)
     )
   }
 }
@@ -336,12 +344,12 @@ function Nav(page) {
   return E.header.chi(
     E.img.props({src: `/images/Ibri-logo-black.svg`, alt: `Ibri`}),
     E.nav.chi(a.map(page.site.nav, PageLink), E.menu.chi(
-      getDivs()
+      getMenu()
     )),
     E.mobilemenu.chi(a.map(page.site.nav, PageLink)),
   )
 }
-function getDivs() {
+function getMenu() {
   return Array.from({ length: 9 }, () => E.div)
 }
 
@@ -351,13 +359,13 @@ function NavFooter(page) {
     )
 }
 
-function FooterIbri(page) {
+function Footer(page) {
   return E.footer.chi(
     E.img.props({alt: `Ibri`, src: `/images/Ibri-logo-white.svg`}),
     E.p.chi(`Ibri® — все права защищены. Любое использование либо копирование материалов сайта, 
       допускается только cо ссылкой на источник`),
       E.div.chi(
-        Contact(data.contactIbri)
+        Contact(data.contact)
       ),
       NavFooter(page),
     E.span.chi(E.a.props({href: `https://github.com/diatom/ibri`}).

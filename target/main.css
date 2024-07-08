@@ -92,11 +92,6 @@ header mobilemenu a {
   border-bottom: 1px solid white;
 }
 
-h2 {
-  color: white;
-  font-size: 1.4em;
-}
-
 main {
   display: flex;
   width: 100%;
@@ -143,7 +138,7 @@ footer {
   height: 20rem;
   width: 2000px;
   max-width: 90%;
-  border-radius: 5px;
+  border-radius: 10px;
   justify-content: center;
   align-items: center;
   background: #000000;
@@ -180,27 +175,36 @@ footer span {
   display: flex;
 }
 
-principe {
-  width: 120em;
-  max-width: 90%;
+block {
+  width: 1600px;
+  max-width: 70%;
+  height: 100px;
   background-color: rgba(155, 131, 131, 0.089);
-  border-radius: 5px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  flex-direction: row;
+  gap: 5%;
 }
-principe div {
-  margin: 4em 0;
+block h2 {
+  color: #3A7189;
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+}
+block div {
+  margin: 1em;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  width: 40%;
-  align-items: center;
+  width: 30%;
+  margin: 0;
+  padding: 0;
 }
-principe h2 {
-  font-size: 1.8em;
-  width: 100%;
-}
-principe a {
+block a {
   color: var(--text-color);
   display: inline;
   text-decoration: underline;

@@ -1,20 +1,5 @@
 export const contact = [
     {
-        'Эл. почта': `mailto: bogucharskiy.s@yandex.ru`
-    },
-    {
-        'Telegram': `https://telegram.me/Severinz`
-    },
-    {
-        'Discord': `https://discord.com/users/214732781945618442`
-    },
-    {
-        'GitHub': `https://github.com/Diatom/`
-    }
-]
-
-export const contactIbri = [
-    {
         'bogucharskiy.s@yandex.ru': `mailto: bogucharskiy.s@yandex.ru`
     },
     {
@@ -24,6 +9,12 @@ export const contactIbri = [
         '+7 (903) 186-93-32': `tel:+79031869332`
     }
 ]
+export const i = `Сделать продукт не похожий на другие. 
+Взять за основую травы, корни, коры и ягоды ароматных растений.
+Не использовать кислородные эфирные масла или ароматизаторы полученные искусственным путём.
+Мы хотим, чтобы каждый раз наш продукт приносил радость и сделал тебя счастливее :)`
+
+export const iImage = ['/images/roots.jpg', '/images/gross.jpg', '/images/bark.jpg', '/images/berry.jpg']
 
 export const bloglist = [
     {
