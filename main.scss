@@ -213,6 +213,7 @@ block {
   max-width: 70%;
   height: auto;
   // background-color: rgba(155, 131, 131, 0.089);
+  border-radius: 10px;
   display: flex;
   justify-content: left;
   flex-direction: row;
@@ -220,16 +221,25 @@ block {
   // gap: 5%;
   h2 {
     color: $primary;
-    width: 10%;
+    width: auto;
     @include mulish($weight: 900);
-    font-size: 2em;
-    margin: 0;
+    font-size: 3em;
+    margin: 0 0 2em 0;
     padding: 0;
   }
   .idea {
     width: 30%;
-    margin: 0;
+    margin: 0 2em 0 4em;
     padding: 0;
+    height: 100%;
+    span {
+      font-size: 1.2em;
+      color: blue;
+    }
+    a {
+      text-decoration: underline 2px dotted blue;
+      margin: auto 0 0 0;
+    }
   }
   .idea-ingri {
     width: 60%;
@@ -246,11 +256,6 @@ block {
       height: auto;
       border-radius: 10px;
     }
-  }
-  a {
-    color: var(--text-color);
-    display: inline;
-    text-decoration: underline;
   }
 }
 

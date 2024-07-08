@@ -85,6 +85,9 @@ class Page404 extends Page {
   }
 }
 
+function Md(md) {
+  return new p.Raw(marked(Deno.readTextFileSync(md)))
+}
 
 // Main //
 class PageIndex extends Page {
@@ -106,7 +109,7 @@ class PageIndex extends Page {
         ),
         E.block.chi(
           E.h2.chi(`ИДЕЯ`),
-          E.div.chi(data.i).props({class: `idea`}),
+          E.div.chi(Md(`./data/idea.md`)).props({class: `idea`}),
           E.div.props({class: `idea-ingri`}).chi(getItem(data.iImage))
         )
       ),
