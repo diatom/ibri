@@ -178,15 +178,15 @@ footer span {
 block {
   width: 1600px;
   max-width: 70%;
-  height: 100px;
-  background-color: rgba(155, 131, 131, 0.089);
+  height: auto;
   display: flex;
   justify-content: left;
   flex-direction: row;
-  gap: 5%;
+  margin: 10em 0;
 }
 block h2 {
   color: #3A7189;
+  width: 10%;
   font-family: "Mulish", sans-serif;
   font-optical-sizing: auto;
   font-weight: 900;
@@ -195,14 +195,26 @@ block h2 {
   margin: 0;
   padding: 0;
 }
-block div {
-  margin: 1em;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+block .idea {
   width: 30%;
   margin: 0;
   padding: 0;
+}
+block .idea-ingri {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: right;
+  gap: 20px;
+  margin: 0 0 0 auto;
+}
+block .idea-ingri img {
+  width: 30em;
+  max-width: 45%;
+  min-width: 20em;
+  height: auto;
+  border-radius: 10px;
 }
 block a {
   color: var(--text-color);
