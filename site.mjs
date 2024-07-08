@@ -80,7 +80,7 @@ class Page404 extends Page {
           E.img.props({alt: `Severin404`, src: `/images/severin404.jpg`, class: `error`})
         )        
       ),
-      Footer(this)
+      FooterIbri(this)
     )
   }
 }
@@ -100,10 +100,14 @@ class PageIndex extends Page {
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
-        E.aboutme.chi(E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}), E.h1.chi(`Ибри`)),
+        E.heyibri.chi(
+          E.h1.chi(E.span.chi(`ИБРИ`), ` — ЭТО ЕЩЁ И ВКУСНЫЙ НАПИТОК`),
+          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
+          E.div.chi(`Приветствуем тебя. Надеемся, что ты найдёшь здесь то, что ищешь. Будем!`)
+        ), 
         E.principe.chi(E.div.chi(new p.Raw(marked(principe))))
       ),
-      Footer(this)
+      FooterIbri(this)
     )
   }
 }
@@ -138,7 +142,7 @@ class PageBlog extends Page {
           )
         )
       ),
-      Footer(this)
+      FooterIbri(this)
     )
   }
 }
@@ -163,7 +167,7 @@ class PageArticle extends Page {
       E.main.chi(
         E.article.chi(new p.Raw(marked(art1)))
       ),
-      Footer(this)
+      FooterIbri(this)
     )
   }
 }
@@ -219,7 +223,7 @@ class PageBookreview extends Page {
           )
         )
       ),
-      Footer(this)
+      FooterIbri(this)
     )
   }
 }
@@ -270,7 +274,7 @@ class PageCheese extends Page {
           )
         )
       ),
-      Footer(this)
+      FooterIbri(this)
     )
   }
 }
@@ -330,31 +334,21 @@ function Layout(tit, desc, img, ...chi) {
 
 function Nav(page) {
   return E.header.chi(
-    E.menu.chi(`☰`),
+    E.img.props({src: `/images/Ibri-logo-black.svg`, alt: `Ibri`}),
+    E.nav.chi(a.map(page.site.nav, PageLink), E.menu.chi(
+      getDivs()
+    )),
     E.mobilemenu.chi(a.map(page.site.nav, PageLink)),
-    E.nav.chi(a.map(page.site.nav, PageLink)),
-    E.h1.chi(E.a.props({href: `/`}).chi(`Северин Богучарский`))
   )
 }
+function getDivs() {
+  return Array.from({ length: 9 }, () => E.div)
+}
+
 
 function NavFooter(page) {
   return E.nav.chi(a.map(page.site.nav, PageLink)
     )
-}
-
-function Footer(page) {
-  return E.footer.chi(
-    E.p.chi(`Любое использование либо копирование материалов или подборки материалов сайта, 
-      допускается только cо ссылкой на источник 
-      www.sirseverin.ru и указанием авторства`),
-    E.div.chi(
-      Contact(data.contact)
-    ),
-    NavFooter(page),
-    E.span.chi(E.a.props({href: `https://github.com/diatom/diatom.github.io`}).
-    chi(`© 2024. Сайт сделал Severin B. 👾`)
-    )
-  )
 }
 
 function FooterIbri(page) {
@@ -362,10 +356,11 @@ function FooterIbri(page) {
     E.img.props({alt: `Ibri`, src: `/images/Ibri-logo-white.svg`}),
     E.p.chi(`Ibri® — все права защищены. Любое использование либо копирование материалов сайта, 
       допускается только cо ссылкой на источник`),
-    E.div.chi(
-      Contact(data.contactIbri)
-    ),
-    E.span.chi(E.a.props({href: `https://github.com/diatom/diatom.github.io`}).
+      E.div.chi(
+        Contact(data.contactIbri)
+      ),
+      NavFooter(page),
+    E.span.chi(E.a.props({href: `https://github.com/diatom/ibri`}).
     chi(`© 2024. Сайт сделал Severin B. 👾`)
     )
   )
