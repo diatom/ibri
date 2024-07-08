@@ -106,8 +106,8 @@ class PageIndex extends Page {
         ),
         E.block.chi(
           E.h2.chi(`ИДЕЯ`),
-          E.div.chi(data.i),
-          getItem(data.iImage)
+          E.div.chi(data.i).props({class: `idea`}),
+          E.div.props({class: `idea-ingri`}).chi(getItem(data.iImage))
         )
       ),
       Footer(this)
@@ -116,7 +116,7 @@ class PageIndex extends Page {
 }
 function getItem(a) {
   return a.map((val) => { 
-    E.div.props({class: `idea-ingri`}).chi(E.img.props({src: val, alt: val}))
+    return E.img.props({src: val, alt: val})
   })
 }
 
