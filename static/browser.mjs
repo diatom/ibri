@@ -29,13 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 // Popup image
-const images = document.querySelectorAll('article img, .cheese img, .spoiler img')
+const images = document.querySelectorAll('img')
 const popup = document.getElementById('popup')
 const popupImage = document.getElementById('popupImage')
 const closeBtn = document.getElementById('closeBtn')
-
-let startX = 0
-let startY = 0
 
 images.forEach(image => {
   image.addEventListener('click', () => {
@@ -60,33 +57,9 @@ popup.addEventListener('click', (e) => {
     }
 })
 
-// popup.addEventListener('touchstart', (e) => {
-//   const touch = e.touches[0]
-//   startX = touch.clientX
-//   startY = touch.clientY
-// })
-
-// popup.addEventListener('touchend', (e) => {
-//   const touch = e.changedTouches[0]
-//   const endX = touch.clientX
-//   const endY = touch.clientY
-
-//   const diffX = endX - startX
-//   const diffY = endY - startY
-
-//   // Определяем, является ли движение смахиванием
-//   if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
-//     // Горизонтальное смахивание
-//     popup.style.display = 'none'
-//   } else if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 30) {
-//     // Вертикальное смахивание
-//     popup.style.display = 'none'
-//   }
-// })
-
 
 // Tags button
-if (window.location.pathname.startsWith('/blog') || window.location.pathname === ('/bookreview') || window.location.pathname === ('/cheese')) {
+if (window.location.pathname.startsWith('/post') || window.location.pathname === ('/mixology')) {
   document.addEventListener('DOMContentLoaded', function() {
     const tagsContainer = document.querySelector('tags')
     const buttons = tagsContainer.querySelectorAll('button[type="button"]')
@@ -132,7 +105,7 @@ if (window.location.pathname.startsWith('/blog') || window.location.pathname ===
 
 
 // Search
-if (window.location.pathname === `/bookreview`) {
+if (window.location.pathname === `/mixology`) {
   const searchInput = document.getElementById(`searchInput`)
   const searchButton = document.getElementById(`searchButton`)
 
@@ -171,7 +144,7 @@ if (window.location.pathname === `/bookreview`) {
 }
 
 // Spoiler 
-if (window.location.pathname === `/cheese`) {
+if (window.location.pathname === `/mixology`) {
   document.querySelectorAll('.spoiler-header').forEach(header => {
     header.addEventListener('click', () => {
       header.classList.toggle('active')

@@ -67,6 +67,8 @@ header {
   width: 1980px;
   max-width: 90%;
   margin: 50px 0 0 0;
+  justify-content: space-between;
+  align-items: center;
   @include mulish($weight: 800);
   img {
     margin: 0 60px 0 0;
@@ -83,12 +85,16 @@ header {
     padding: 0 2% 0 5%;
   }
   a {
-    padding: 0.3rem 2rem 0.3rem 2rem;
+    padding: 0.2em 1em 0.2em 1em;
     font-size: 1.2rem;
     color: white;
   }
   a:hover {
     text-decoration: underline 2px solid white;
+  }
+  .logo {
+    margin: 0;
+    padding: 0;
   }
   menu {
     color: white;
@@ -101,33 +107,40 @@ header {
     flex-wrap: wrap;
     width: 40px;
     gap: 8px;
-    
     div {
       background-color: white;
       margin: 0;
       width: 8px;
       height: 8px;
+      border-radius: 2px;
     }
   }
   mobilemenu {
     display: none;
-    background-color: black;
+    background-color: #000000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.4);
-    width: 50%;
+    width: 20%;
     position: fixed;
     flex-wrap: no-wrap;
     flex-direction: column;
     align-items: left;
     top: 0;
-    left: 0;
+    right: 0;
     padding: 1vh;
-    height: 98vh;
+    height: 45vh;
     z-index: 1000;
     a {
       padding: 0.8em 0.8em;
       font-size: 1.2em;
       border-bottom: 1px solid white;
+      display: none;
     }
+  }
+  nav a:nth-last-child(-n+2) {
+    display: none;
+  }
+  mobilemenu a:nth-last-child(1) {
+    display: block;
   }
 }
 main {
@@ -212,13 +225,11 @@ block {
   width: 1600px;
   max-width: 70%;
   height: auto;
-  // background-color: rgba(155, 131, 131, 0.089);
   border-radius: 10px;
   display: flex;
   justify-content: left;
   flex-direction: row;
   margin: 10em 0;
-  // gap: 5%;
   h2 {
     color: $primary;
     width: auto;
@@ -254,8 +265,38 @@ block {
       max-width: 45%;
       min-width: 20em;
       height: auto;
+      overflow: hidden;
       border-radius: 10px;
     }
+  }
+  img {
+    // width: 60%;
+    max-width: 800px;
+    height: 25em;
+    border-radius: 10px;
+    margin: 0 0 0 auto;
+    overflow: hidden;
+    object-fit: contain;
+  }
+}
+
+pattern {
+  width: 100%;
+  background-color: $primary;
+  justify-content: center;
+  display: flex;
+  div {
+    width: 90%;
+    margin: 4% 2%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.7em;
+    overflow: hidden;
+    height: 16em;
+  }
+  img {
+    width: 55px;
   }
 }
 
@@ -363,8 +404,6 @@ arttags {
   }
 }
 
-
-
 // Article
 article {
   margin: 5em 0;
@@ -459,7 +498,6 @@ books {
 
 }
 
-
 // Search
 .info-books, .info-cheeses {
   display: flex;
@@ -487,7 +525,6 @@ books {
     color: grey;
   }
 }
-
 search {
   margin: 1em 0;
   padding: 0;
@@ -609,7 +646,6 @@ form {
   }
 }
 
-
 // Popup image
 .popup {
   display: none;
@@ -626,13 +662,11 @@ form {
 .popup-content {
   position: relative;
 }
-
 .popup-content img {
   width: 90%;
   max-height: 95vh;
   margin: 0 5%;
 }
-
 .close {
   position: absolute;
   top: 20px;
@@ -648,22 +682,78 @@ form {
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 /* Track */
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #777;
+  background: black;
 }
-
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #777;
+  background: black;
 }
 
+@media (max-width: 1600px) {
+  header nav a:nth-last-child(-n+3) {
+    display: none;
+  }
+  mobilemenu a:nth-last-child(2) {
+    display: block;
+  }
+}
+@media (max-width: 1400px) {
+  header nav a:nth-last-child(-n+4) {
+    display: none;
+  }
+  mobilemenu a:nth-last-child(3) {
+    display: block;
+  }
+}
+@media (max-width: 1200px) {
+  header nav a:nth-last-child(-n+5) {
+    display: none;
+  }
+  mobilemenu a:nth-last-child(4) {
+    display: block;
+  }
+}
+@media (max-width: 1100px) {
+  header nav a:nth-last-child(-n+6) {
+    display: none;
+  }
+  mobilemenu a:nth-last-child(5) {
+    display: block;
+  }
+}
+@media (max-width: 900px) {
+  header nav a:nth-last-child(-n+7) {
+    display: none;
+  }
+  mobilemenu a:nth-last-child(6) {
+    display: block;
+  }
+}
+@media (max-width: 800px) {
+  header nav a:nth-last-child(-n+7) {
+    display: none;
+  }
+  header nav a:first-child {
+    display: none;
+  }
+  mobilemenu a:nth-last-child(7) {
+    display: block;
+  }
+}
+// @media (max-width: 800px) {
+//   header nav a:nth-last-child(-n+10) {
+//     display: none;
+//   }
+//   mobilemenu a:nth-last-child(9) {
+//     display: block;
+//   }
+// }
 
 @media screen and (max-width: 1250px) {
   article, blog, books {
@@ -687,11 +777,11 @@ form {
       width: 70%;
     }
   }
-  header {
-    a {
-      padding: 0.3rem 1rem 0.3rem 1rem;
-    }
-  }
+  // header {
+  //   a {
+  //     padding: 0.3rem 1rem 0.3rem 1rem;
+  //   }
+  // }
 }
 @media screen and (max-width: 860px) {
   heyibri {
@@ -773,11 +863,9 @@ form {
     }
   }
   header {
-    height: 7vh;
-    position: fixed;
-    top: 0.5em;
-    z-index: 1000;
-
+    nav {
+      padding: 0 1em 0 1em;
+    }
     h1 {
       display: flex;
       margin: 0 1em 0 auto;
@@ -788,9 +876,12 @@ form {
       align-items: center;
       font-family: 'Bitter', serif;
     }
-    nav {
-      display: none;
-    }
+    // .logo {
+    //   width: 100px;
+    //   img {
+    //     width: 60px;
+    //   }
+    // }
     a {
       font-size: 1em;
       padding: 0.3rem 0.5rem 0.3rem 0.5rem;
@@ -798,12 +889,6 @@ form {
   }
   main {
     margin: 5.5em 0 0 0;
-    nav {
-      a, p {
-        font-size: 1em;
-        padding: 0.3rem 0.5rem 0.3rem 0.5rem;
-      }
-    }
   }
   form {
     label {

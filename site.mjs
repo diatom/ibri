@@ -11,7 +11,6 @@ import * as l from './live.mjs'
 import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
 
 import * as data from './data/data.js';
-import * as book from './data/data-books.js'
 import * as cheese from './data/data-cheese.js'
 
 const {E} = new p.Ren(dg.document).patchProto(dg.glob.Element)
@@ -85,9 +84,7 @@ class Page404 extends Page {
   }
 }
 
-function Md(md) {
-  return new p.Raw(marked(Deno.readTextFileSync(md)))
-}
+
 
 // Main //
 class PageIndex extends Page {
@@ -110,7 +107,20 @@ class PageIndex extends Page {
         E.block.chi(
           E.h2.chi(`ИДЕЯ`),
           E.div.chi(Md(`./data/idea.md`)).props({class: `idea`}),
-          E.div.props({class: `idea-ingri`}).chi(getItem(data.iImage))
+          E.div.props({class: `idea-ingri`}).chi(getItem(data.iImage)),
+        ),
+        E.pattern.chi(E.div.chi(getIbri())),
+        E.block.chi(
+          E.h2.chi(`ПРОДУКЦИЯ`),
+          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
+          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
+          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
+        ),
+        E.block.chi(
+          E.h2.chi(`МИКСОЛОГИЯ`),
+          E.div.chi(`Качественная основа напитков Ибри делает их прекрасной основой для коктелей. 
+            В нашей базе есть и другие костейли, на основе других напитков`).props({class: `idea`}),
+          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`})
         )
       ),
       Footer(this)
@@ -122,16 +132,142 @@ function getItem(a) {
     return E.img.props({src: val, alt: val})
   })
 }
+function getIbri() {
+  return Array.from({ length: 200 }, () => E.img.props({src: `/images/Ibri-logo-white.svg`, alt: `ibri`}))
+}
 
 
-// Blog //
-class PageBlog extends Page {
-  urlPath() {return `/blog`}
-  title() {return `Блог`}
+// About //
+class PageAbout extends Page {
+  urlPath() {return `/about`}
+  title() {return `О нас`}
+  
+  body() {
+    const tit = `О нас`
+    const desc = `О нашей компании и истории`
+    const img = `https://sirseverin.ru/images/ibri.jpg`
+    return Layout(tit, desc, img,
+      Nav(this),
+      E.main.chi(
+        E.block.chi(E.article.chi(Md('./data/about.md')))
+      ),
+      Footer(this)
+    )
+  }
+}
+
+// Idea //
+class PageIdea extends Page {
+  urlPath() {return `/idea`}
+  title() {return `Идея`}
+  
+  body() {
+    const tit = `Идея`
+    const desc = `Идея компании`
+    const img = `https://sirseverin.ru/images/ibri.jpg`
+    return Layout(tit, desc, img,
+      Nav(this),
+      E.main.chi(
+        E.block.chi(E.article.chi(Md('./data/idea.md'), getItem(data.iImage))),
+      ),
+      Footer(this)
+    )
+  }
+}
+
+// Invest //
+class PageInvest extends Page {
+  urlPath() {return `/invest`}
+  title() {return `Инвесторам`}
+  
+  body() {
+    const tit = `Инвесторам`
+    const desc = `Инвестирование`
+    const img = `https://sirseverin.ru/images/ibri.jpg`
+    return Layout(tit, desc, img,
+      Nav(this),
+      E.main.chi(
+        E.block.chi(E.article.chi(Md('./data/invest.md')))
+      ),
+      Footer(this)
+    )
+  }
+}
+
+// Coop //
+class PageCoop extends Page {
+  urlPath() {return `/coop`}
+  title() {return `Сотрудничество`}
+  
+  body() {
+    const tit = `Сотрудничество`
+    const desc = `Сотрудничество с Ибри. Закупки.`
+    const img = `https://sirseverin.ru/images/ibri.jpg`
+    return Layout(tit, desc, img,
+      Nav(this),
+      E.main.chi(
+        E.block.chi(E.article.chi(Md('./data/coop.md')))
+      ),
+      Footer(this)
+    )
+  }
+}
+
+// Buy //
+class PageBuy extends Page {
+  urlPath() {return `/wherebuy`}
+  title() {return `Где купить`}
+  
+  body() {
+    const tit = `Где купить`
+    const desc = `Где купить Ибри`
+    const img = `https://sirseverin.ru/images/ibri.jpg`
+    return Layout(tit, desc, img,
+      Nav(this),
+      E.main.chi(
+        E.block.chi(E.article.chi(Md('./data/buy.md')))
+      ),
+      Footer(this)
+    )
+  }
+}
+
+// Product //
+class PageProduct extends Page {
+  urlPath() {return `/product`}
+  title() {return `Продукция`}
+  
+  body() {
+    const tit = `Продукция`
+    const desc = `Ибри. Ибри имбирный. Ибри русский.`
+    const img = `https://sirseverin.ru/images/ibri.jpg`
+    return Layout(tit, desc, img,
+      Nav(this),
+      E.main.chi(
+        E.block.chi(
+          E.h2.chi(`ПРОДУКЦИЯ`),
+          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
+          E.h3.chi(`Ибри`),
+          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
+          E.h3.chi(`Ибри имбирный`),
+          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
+          E.h3.chi(`Ибри русский`),
+        ),
+      ),
+      Footer(this)
+    )
+  }
+}
+
+
+// Post //
+class PagePost extends Page {
+  urlPath() {return `/post`}
+  title() {return `Новости`}
 
   body() {
-    const tit = `Блог`
-    const desc = `Личный блог. Рассуждения на разные темы. Мир. Путешествия`
+    const tit = `Новости`
+    const desc = `Новости компании, мероприятия, статьи.`
     const img = `https://sirseverin.ru/images/ibri.jpg`
     return Layout(tit, desc, img,
       Nav(this),
@@ -142,7 +278,7 @@ class PageBlog extends Page {
             data.list.map((val) => {
             return E.div.props({id: val.id, dataindex: val.dataindex, class: `filter`}).chi(
               E.span.chi(val.date),
-              E.a.props({href: `/blog/` + val.dataindex}).chi(
+              E.a.props({href: `/post/` + val.dataindex}).chi(
                 E.h3.chi(val.h3),
                 E.p.chi(val.p),
                 E.img.props({alt: val.alt, src: val.src}),
@@ -165,18 +301,17 @@ class PageArticle extends Page {
     this.arti = arti
   }  
   
-    urlPath() {return `/blog/` + this.arti.dataindex}
+    urlPath() {return `/post/` + this.arti.dataindex}
     title() {return this.arti.dataindex}
   
     body() {
-    const art1 = Deno.readTextFileSync(this.arti.path)
     const tit = this.arti.h3
     const desc = this.arti.p
     const img = `https://sirseverin.ru/` + this.arti.src
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
-        E.article.chi(new p.Raw(marked(art1)))
+        E.article.chi(Md(this.arti.path))
       ),
       Footer(this)
     )
@@ -191,76 +326,40 @@ function Articles(site) {
     return results
 }
 
-// Bookreview //
-class PageBookreview extends Page {
-  urlPath() {return `/bookreview`}
-  title() {return `Обзоры книг`}
 
-  body() {
-    const tit = `Обзоры книг`
-    const desc = `Обзоры прочитанных книг, с личным рейтингом.`
-    const img = `https://sirseverin.ru/images/books.jpg`
-    return Layout(tit, desc, img,
-      Nav(this),
-      E.main.chi(
-        E.div.props({class: `info-books`}).chi(
-          E.h2.chi(`Краткие оценки прочитанных мною книг`),
-          // E.img.props({src: `/images/books.jpg`, alt: `Books`, class: `img-info`}),
-          E.search.chi(
-            E.label.props({for: `searchInput`}),
-            // E.label.props({for: `searchInput`}).chi(`Краткие оценки прочитанных мною книг`),
-            E.div.chi(
-              E.input.props({type: `text`, id: `searchInput`, placeholder: `Книга, автор, жанр...`}),
-              E.button.props({id: `searchButton`, type: `submit`}).chi(
-                E.img.props({src: `/images/search.svg`, alt: `s`, class: `img-svg`})
-              )
-            )
-          ),
-          BookTags(book.t),
-        ),
-        E.books.chi(
-          book.b.map((val) => {
-            return E.div.props({class: `book`, id: val.Id}).chi(
-              E.span.chi(val.Id),
-              E.h3.chi(val.name),
-              E.p.chi(`Автор: ` + val.author),
-              E.p.chi(`Жанр: ` + val.genre),
-              E.p.chi(`Дата: ` + val.date),
-              E.p.chi(val.description),
-              E.p.chi(`Мой рейтинг: ` + val.rating),
-              ArtTags(val.tags),
-            )
-          }
-          )
-        )
-      ),
-      Footer(this)
-    )
-  }
-}
-// Cheese //
-class PageCheese extends Page {
-  urlPath() {return `/cheese`}
-  title() {return `Сыр`}
+// Mixology //
+class PageMix extends Page {
+  urlPath() {return `/mixology`}
+  title() {return `Миксология`}
 
   body() {
     const acheese =  Deno.readTextFileSync(`./data/cheese.md`)
-    const tit = `Сыр`
-    const desc = `Список сыра, который возможно внедрить на производство.`
-    const img = `https://sirseverin.ru/images/cheese.jpg`
+    const tit = `Миксология`
+    const desc = `Рецепты коктейлей`
+    const img = `https://sirseverin.ru/images/ibri.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
         E.div.props({class: `info-cheeses`}).chi(
-          E.h2.chi(`Сыр, который я умею делать`),
-          E.div.props({class: `spoiler`}).chi(
-            E.div.props({class: `spoiler-header`}).chi(
-              E.span.props({class: `toggle-icon`}).chi(`▶`),
-              E.p.chi(`Нажми чтобы прочитать подробности`),
-            ),
-            E.div.props({class: `spoiler-content`}).chi(
-              new p.Raw(marked(acheese))
-            ),
+          E.h2.chi(`Коктейли`),
+          // E.div.props({class: `spoiler`}).chi(
+          //   E.div.props({class: `spoiler-header`}).chi(
+          //     E.span.props({class: `toggle-icon`}).chi(`▶`),
+          //     E.p.chi(`Нажми чтобы прочитать подробности`),
+          //   ),
+          //   E.div.props({class: `spoiler-content`}).chi(
+          //     new p.Raw(marked(acheese))
+          //   ),
+          // ),
+          E.search.chi(
+            E.label.props({for: `searchInput`}),
+            // E.label.props({for: `searchInput`}).chi(`Рецепты коктейлей`),
+            E.div.chi(
+              E.input.props({type: `text`, id: `searchInput`, placeholder: `Коктейль, ингридиент, напиток...`}),
+              E.button.props({id: `searchButton`, type: `submit`}).chi(
+                E.img.props({src: `/images/search.svg`, alt: `s`, class: `img-svg`})
+              )
+            )
           ),
           BookTags(cheese.t),
         ),
@@ -294,7 +393,7 @@ class Site extends a.Emp {
   constructor() {
     super()
     this.notFound = new Page404(this)
-    this.nav = [new PageIndex(this), new PageBlog(this), new PageBookreview(this), new PageCheese(this)]
+    this.nav = [new PageIndex(this), new PageIdea(this), new PageProduct (this), new PageAbout(this), new PageBuy(this), new PageMix(this), new PageInvest(this), new PageCoop(this), new PagePost(this)]
     this.articles = Articles(this)
     // console.log(`This`, this)
   }
@@ -302,8 +401,6 @@ class Site extends a.Emp {
 }
 export const site = new Site()
 // console.log(site.all())
-
-const anal =  Deno.readTextFileSync(`./data/anal.md`)
 
 function Layout(tit, desc, img, ...chi) {
   return p.renderDocument(
@@ -313,7 +410,7 @@ function Layout(tit, desc, img, ...chi) {
         E.meta.props({name: `viewport`, content: `width=device-width, initial-scale=1`}),
         E.title.chi(tit),
         E.meta.props({name: `description`, content: desc}),
-        E.meta.props({name: `keywords`, content: `личный сайт, блог, путешествия, советы, фотографии, книги, социальные темы`}),
+        E.meta.props({name: `keywords`, content: `газированный напиток, коктейли, натуральный, миксология`}),
         E.meta.props({property: `og:title`, content: tit}),
         E.meta.props({property: `og:description`, content: desc}),
         E.meta.props({property: `og:type`, content: `website`}),
@@ -327,7 +424,7 @@ function Layout(tit, desc, img, ...chi) {
         E.link.props({rel: `stylesheet`, href: `/main.css`}),
         E.style.chi(`@import url('https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV,SHRP@100..900,0..1,0..100&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');`),
         a.vac(DEV) && E.script.chi(`navigator.serviceWorker.register('/sw.mjs')`),
-        // new p.Raw(marked(anal))
+        // Md(`./data/anal.md`)
       ),
       E.body.props({class: `dark-theme`}).chi(chi, 
         E.div.props({class: `popup`, id: `popup`}).chi(
@@ -345,7 +442,7 @@ function Layout(tit, desc, img, ...chi) {
 
 function Nav(page) {
   return E.header.chi(
-    E.img.props({src: `/images/Ibri-logo-black.svg`, alt: `Ibri`}),
+    E.a.props({href: `/`, class: `logo`}).chi(E.img.props({src: `/images/Ibri-logo-black.svg`, alt: `Ibri`})),
     E.nav.chi(a.map(page.site.nav, PageLink), E.menu.chi(
       getMenu()
     )),
@@ -423,4 +520,8 @@ function BookTags(tag) {
       E.button.props({type: `button`, class: `btn`}).chi(E.span.chi(`#`), val)
     )
   )
+}
+
+function Md(md) {
+  return new p.Raw(marked(Deno.readTextFileSync(md)))
 }
