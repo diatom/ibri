@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 // Popup image
-const images = document.querySelectorAll('img')
+const images = document.querySelectorAll('article img, .cheese img, .spoiler img')
 const popup = document.getElementById('popup')
 const popupImage = document.getElementById('popupImage')
 const closeBtn = document.getElementById('closeBtn')

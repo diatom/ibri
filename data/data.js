@@ -11,41 +11,24 @@ export const contact = [
 ]
 
 export const iImage = ['/images/root.jpg', '/images/grass.jpg', '/images/bark.jpg', '/images/berry.jpg']
-
-export const bloglist = [
+export const pro = [
     {
-        'name': `Общество`,
-        'desc': `Социальные темы, общество и государства`,
-        'dataindex': `social`,
-        'tags': [`общество`],
+        name: 'Ибри классический',
+        src: '/images/ibri.jpg',
     },
-    // {
-    //     'name': `Мир`,
-    //     'desc': 'Окружающий мир, города, природа',
-    //     'dataindex': 'world',
-    //     'tags': ['мир'],
-    // },
-    // {
-    //     'name': `Путешествия`,
-    //     'desc': 'Путешествия по миру и России',
-    //     'dataindex': 'travel',
-    //     'tags': ['путешествия'],
-    // },
-    // {
-    //     'name': `Сыр`,
-    //     'desc': 'Самое вкусное',
-    //     'dataindex': 'cheese',
-    //     'tags': ['сыр'],
-    // },
-]
-
+    {
+        name: 'Ибри имбирный',
+        src: '/images/ibri.jpg',
+    },
+    {
+        name: 'Ибри русский',
+        src: '/images/ibri.jpg',
+    },
+] 
 export const arttags = [
     `общество`,
     `история`,
-    // `мир`,
-    // `сыр`,
 ]
-
 export const list = [
     {
         'id': '0',

@@ -112,9 +112,13 @@ class PageIndex extends Page {
         E.pattern.chi(E.div.chi(getIbri())),
         E.block.chi(
           E.h2.chi(`ПРОДУКЦИЯ`),
-          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
-          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
-          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
+          data.pro.map((val) => {
+            return E.div.props({class: `u-pro`}).chi(
+              E.img.props({src: val.src, alt: val.name}),
+              E.h3.chi(val.name)
+            )
+          }
+          )
         ),
         E.block.chi(
           E.h2.chi(`МИКСОЛОГИЯ`),
@@ -246,12 +250,12 @@ class PageProduct extends Page {
       E.main.chi(
         E.block.chi(
           E.h2.chi(`ПРОДУКЦИЯ`),
-          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
-          E.h3.chi(`Ибри`),
-          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
-          E.h3.chi(`Ибри имбирный`),
-          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
-          E.h3.chi(`Ибри русский`),
+          data.pro.map((val) => {
+            return E.div.props({class: `u-pro`}).chi(
+              E.img.props({src: val.src, alt: val.name}),
+              E.h3.chi(val.name)
+            )
+          }),
         ),
       ),
       Footer(this)

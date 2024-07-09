@@ -149,7 +149,7 @@ heyibri div {
 
 footer {
   flex-wrap: wrap;
-  height: 20rem;
+  height: 22rem;
   width: 2000px;
   max-width: 90%;
   border-radius: 10px;
@@ -268,6 +268,15 @@ pattern div {
 }
 pattern img {
   width: 55px;
+}
+
+.u-pro {
+  width: 20%;
+  max-width: 25em;
+}
+.u-pro img {
+  width: 100%;
+  border-radius: 10px;
 }
 
 .error {

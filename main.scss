@@ -1,14 +1,10 @@
 $light-bg-color: white;
 $light-text-color: black;
-
 $dark-bg-color: hsl(0, 0%, 14%);
 $dark-text-color: white;
-
 $primary: #3A7189;
-
 $geologica-font: "Geologica", sans-serif;
 $mulish-font: "Mulish", sans-serif;
-
 
 @mixin geologica($weight: 400, $cursive: 0, $sharpness: 50) {
     font-family: $geologica-font;
@@ -26,7 +22,6 @@ $mulish-font: "Mulish", sans-serif;
     font-weight: $weight;
     font-style: normal;
 }
-
 
 $transition-duration: 0.3s;
 $hover-scale: 1.03;
@@ -181,7 +176,7 @@ heyibri {
 }
 footer {
   flex-wrap: wrap;
-  height: 20rem;
+  height: 22rem;
   width: 2000px;
   max-width: 90%;
   border-radius: 10px;
@@ -220,7 +215,6 @@ footer {
     display: flex;
   }
 }
-
 block {
   width: 1600px;
   max-width: 70%;
@@ -279,7 +273,6 @@ block {
     object-fit: contain;
   }
 }
-
 pattern {
   width: 100%;
   background-color: $primary;
@@ -297,6 +290,14 @@ pattern {
   }
   img {
     width: 55px;
+  }
+}
+.u-pro {
+  width: 20%;
+  max-width: 25em;
+  img {
+    width: 100%;
+    border-radius: 10px;
   }
 }
 
