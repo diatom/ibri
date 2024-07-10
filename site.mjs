@@ -122,7 +122,7 @@ class PageIndex extends Page {
           ),
           E.div.props({class: `units-pro`}).chi(
             data.pro.map((val) => {
-              return E.div.props({class: `u-pro`}).chi(
+              return E.a.props({class: `u-pro`, href: val.href}).chi(
                 E.img.props({src: val.src, alt: val.name}),
                 E.h3.chi(val.name)
               )

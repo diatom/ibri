@@ -17,18 +17,9 @@ export const idea = [
     {name: `Ягоды`, src: `/images/berry.jpg`}
 ]
 export const pro = [
-    {
-        name: 'Ибри классический',
-        src: '/images/ibri-bottle.png',
-    },
-    {
-        name: 'Ибри имбирный',
-        src: '/images/ibri-bottle.png',
-    },
-    {
-        name: 'Ибри русский',
-        src: '/images/ibri-bottle.png',
-    },
+    {name: 'Ибри классический', src: '/images/ibri-bottle.png', href: '/product/#ibric'},
+    {name: 'Ибри имбирный', src: '/images/ibri-bottle.png', href: '/product/#ibrii'},
+    {name: 'Ибри русский', src: '/images/ibri-bottle.png', href: '/product/#ibrir'},
 ] 
 export const arttags = [
     `общество`,
