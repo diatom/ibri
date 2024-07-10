@@ -94,37 +94,51 @@ class PageIndex extends Page {
 
   body() {
   const tit = `Ibri`
-  const desc = `Ибри — авторские напитки. Продукция, идея, миксология.`
+  const desc = `Ибри — авторские напитки. Продукт, идея, миксология.`
   const img = `https://sirseverin.ru/images/ibri.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
         E.heyibri.chi(
-          E.h1.chi(E.span.chi(`ИБРИ`), ` — ЭТО ЕЩЁ И ВКУСНЫЙ НАПИТОК`),
+          E.h1.chi(E.span.chi(`Ибри`), ` — это ещё и вкусный напиток`),
           E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
           E.div.chi(`Приветствуем тебя. Надеемся, что ты найдёшь здесь то, что ищешь. Будем!`)
         ),
         E.block.chi(
-          E.h2.chi(`ИДЕЯ`),
-          E.div.chi(Md(`./data/idea.md`)).props({class: `idea`}),
-          E.div.props({class: `idea-ingri`}).chi(getItem(data.iImage)),
+          E.div.props({class: `block-info`}).chi(
+            E.h2.chi(`Идея`),
+            E.a.props({href: `/idea`}).chi(`Подробнее`),
+            E.div.chi(Md(`./data/idea.md`)).props({class: `idea`}),
+          ),
+          E.div.props({class: `idea-ingri`}).chi(
+            getItem(data.idea)
+          )
         ),
         E.pattern.chi(E.div.chi(getIbri())),
         E.block.chi(
-          E.h2.chi(`ПРОДУКЦИЯ`),
-          data.pro.map((val) => {
-            return E.div.props({class: `u-pro`}).chi(
-              E.img.props({src: val.src, alt: val.name}),
-              E.h3.chi(val.name)
-            )
-          }
+          E.div.props({class: `block-info`}).chi(
+            E.h2.chi(`Продукт`),
+            E.a.props({href: `/product`}).chi(`Подробнее`),
+          ),
+          E.div.props({class: `units-pro`}).chi(
+            data.pro.map((val) => {
+              return E.div.props({class: `u-pro`}).chi(
+                E.img.props({src: val.src, alt: val.name}),
+                E.h3.chi(val.name)
+              )
+            })
           )
         ),
         E.block.chi(
-          E.h2.chi(`МИКСОЛОГИЯ`),
-          E.div.chi(`Качественная основа напитков Ибри делает их прекрасной основой для коктелей. 
-            В нашей базе есть и другие костейли, на основе других напитков`).props({class: `idea`}),
-          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`})
+          E.div.props({class: `block-info`}).chi(
+            E.h2.chi(`Миксология`),
+            E.a.props({href: `/mixology`}).chi(`Подробнее`),
+            E.div.chi(`Качественная основа напитков Ибри делает их прекрасной основой для коктелей. 
+              В нашей базе есть и другие костейли, на основе других напитков`).props({class: `idea`}),
+          ),
+          E.div.props({class: `mixology-img`}).chi(
+            E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`})
+          )
         )
       ),
       Footer(this)
@@ -132,8 +146,11 @@ class PageIndex extends Page {
   }
 }
 function getItem(a) {
-  return a.map((val) => { 
-    return E.img.props({src: val, alt: val})
+  return a.map((val) => {
+    return E.div.props({class: ``}).chi(
+      E.img.props({src: val.src, alt: val.name, class: `i-ingri`}),
+      E.h3.chi(val.name)
+    )
   })
 }
 function getIbri() {
@@ -153,6 +170,7 @@ class PageAbout extends Page {
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
+        E.h1.chi(`О нас`),
         E.block.chi(E.article.chi(Md('./data/about.md')))
       ),
       Footer(this)
@@ -172,7 +190,8 @@ class PageIdea extends Page {
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
-        E.block.chi(E.article.chi(Md('./data/idea.md'), getItem(data.iImage))),
+        E.h1.chi(`Идея Ibri`),
+        E.block.chi(E.article.chi(Md('./data/idea.md'), getItem(data.idea))),
       ),
       Footer(this)
     )
@@ -191,6 +210,7 @@ class PageInvest extends Page {
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
+        E.h1.chi(`Инвесторам`),
         E.block.chi(E.article.chi(Md('./data/invest.md')))
       ),
       Footer(this)
@@ -210,6 +230,7 @@ class PageCoop extends Page {
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
+        E.h1.chi(`Сотрудничество`),
         E.block.chi(E.article.chi(Md('./data/coop.md')))
       ),
       Footer(this)
@@ -229,6 +250,7 @@ class PageBuy extends Page {
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
+        E.h1.chi(`Где купить`),
         E.block.chi(E.article.chi(Md('./data/buy.md')))
       ),
       Footer(this)
@@ -239,17 +261,17 @@ class PageBuy extends Page {
 // Product //
 class PageProduct extends Page {
   urlPath() {return `/product`}
-  title() {return `Продукция`}
+  title() {return `Продукт`}
   
   body() {
-    const tit = `Продукция`
+    const tit = `Продукт`
     const desc = `Ибри. Ибри имбирный. Ибри русский.`
     const img = `https://sirseverin.ru/images/ibri.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
+        E.h1.chi(`Продукт`),
         E.block.chi(
-          E.h2.chi(`ПРОДУКЦИЯ`),
           data.pro.map((val) => {
             return E.div.props({class: `u-pro`}).chi(
               E.img.props({src: val.src, alt: val.name}),
@@ -344,8 +366,8 @@ class PageMix extends Page {
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
+        E.h1.chi(`Коктейли`),
         E.div.props({class: `info-cheeses`}).chi(
-          E.h2.chi(`Коктейли`),
           // E.div.props({class: `spoiler`}).chi(
           //   E.div.props({class: `spoiler-header`}).chi(
           //     E.span.props({class: `toggle-icon`}).chi(`▶`),

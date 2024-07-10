@@ -10,19 +10,24 @@ export const contact = [
     }
 ]
 
-export const iImage = ['/images/root.jpg', '/images/grass.jpg', '/images/bark.jpg', '/images/berry.jpg']
+export const idea = [
+    {name: `Корни`, src: `/images/root.jpg`},
+    {name: `Травы`, src: `/images/grass.jpg`},
+    {name: `Коры`, src:  `/images/bark.jpg`},
+    {name: `Ягоды`, src: `/images/berry.jpg`}
+]
 export const pro = [
     {
         name: 'Ибри классический',
-        src: '/images/ibri.jpg',
+        src: '/images/ibri-bottle.png',
     },
     {
         name: 'Ибри имбирный',
-        src: '/images/ibri.jpg',
+        src: '/images/ibri-bottle.png',
     },
     {
         name: 'Ибри русский',
-        src: '/images/ibri.jpg',
+        src: '/images/ibri-bottle.png',
     },
 ] 
 export const arttags = [
