@@ -269,6 +269,7 @@ pattern {
   background-color: #3A7189;
   justify-content: center;
   display: flex;
+  margin: 5em 0;
 }
 pattern div {
   width: 90%;

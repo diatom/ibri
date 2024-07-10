@@ -134,7 +134,7 @@ class PageIndex extends Page {
             E.h2.chi(`Миксология`),
             E.a.props({href: `/mixology`}).chi(`Подробнее`),
             E.div.chi(`Качественная основа напитков Ибри делает их прекрасной основой для коктелей. 
-              В нашей базе есть и другие костейли, на основе других напитков`).props({class: `idea`}),
+              В нашей базе есть и другие коктейли, на основе других напитков`).props({class: `idea`}),
           ),
           E.div.props({class: `mixology-img`}).chi(
             E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`})
