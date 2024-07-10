@@ -201,8 +201,8 @@ block {
   margin: 5em 0;
 }
 block .block-info {
-  width: 60em;
-  max-width: 40%;
+  width: 40em;
+  max-width: 30%;
 }
 block .block-info a {
   width: 10em;
@@ -224,7 +224,7 @@ block h2 {
 block .idea {
   width: auto;
   margin: 0;
-  padding: 0 8em 0 0;
+  padding: 0 4em 0 0;
 }
 block .idea span {
   font-size: 1.2em;
@@ -265,6 +265,7 @@ block .idea-ingri .i-ingri {
 
 pattern {
   width: 100%;
+  max-width: 3000px;
   background-color: #3A7189;
   justify-content: center;
   display: flex;
@@ -288,23 +289,33 @@ pattern img {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 20px;
-  margin: 0 0 0 auto;
+  margin: 0;
 }
 .units-pro .u-pro {
-  max-width: 15em;
-  max-width: 20%;
+  width: auto;
+  max-width: 30%;
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin: 0 3em;
 }
 .units-pro .u-pro h3 {
   text-align: center;
-  margin: 0;
+  margin: 2em 0 0 0;
   padding: 0;
+  font-family: "Geologica", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "slnt" 0, "CRSV" 0, "SHRP" 100;
+  color: black;
+  white-space: pre-line;
 }
 .units-pro .u-pro img {
-  width: 60%;
-  border-radius: 10px;
+  width: auto;
+  height: 20em;
+  overflow: hidden;
 }
 
 .mixology-img {
