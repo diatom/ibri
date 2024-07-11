@@ -276,34 +276,34 @@ block {
       margin: auto 0 0 0;
     }
   }
-  .idea-ingri {
-    width: auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: right;
-    gap: 10px;
-    margin: 0 0 0 auto;
-    div {
-      width: 25em;
-      max-width: 45%;
-      overflow: hidden;
-      border-radius: 10px;
-      color: $second;
-      text-align: center;
-      h3 {
-        margin: 0;
-        padding: 0;
-      }
-    }
-    .i-ingri {
-      width: 100%;
-      height: 15em;
-      border-radius: 10px;
+}
+.idea-ingri {
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: right;
+  gap: 10px;
+  margin: 0 0 0 auto;
+  div {
+    width: 25em;
+    max-width: 48%;
+    overflow: hidden;
+    border-radius: 10px;
+    color: $second;
+    text-align: center;
+    h3 {
       margin: 0;
-      overflow: hidden;
-      object-fit: cover;
+      padding: 0;
     }
+  }
+  .i-ingri {
+    width: 100%;
+    height: 15em;
+    border-radius: 10px;
+    margin: 0;
+    overflow: hidden;
+    object-fit: cover;
   }
 }
 pattern {
@@ -390,6 +390,16 @@ pattern {
 }
 .error:hover {
   text-decoration: underline 1px solid white;
+}
+.content {
+  width: 50%;
+  margin: 5em 0 0 0;
+  h3 {
+    font-size: 2em;
+  }
+  img {
+    width: 40%;
+  }
 }
 blog {
   margin: 5em 0;
@@ -478,8 +488,11 @@ arttags {
   }
 }
 article {
-  margin: 5em 0;
   width: 50%;
+  margin: 5em 0;
+  h1 {
+    margin: 0;
+  }
   h2 {
     color: var(--text-color);
   }
@@ -490,9 +503,6 @@ article {
   span {
     font-size: 0.9em;
     color: grey;
-  }
-  span:last-child {
-    margin-top: 12em;
   }
   img {
     width: 100%;
@@ -743,25 +753,19 @@ form {
   cursor: pointer;
   border: 2px solid white;
 }
-
 // Scroll
-/* width */
-::-webkit-scrollbar {
+::-webkit-scrollbar { /* width */
   width: 10px;
 }
-/* Track */
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track { /* Track */
   background: transparent;
 }
-/* Handle */
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb { /* Handle */
   background: black;
 }
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover { /* Handle on hover */
   background: black;
 }
-
 @media (max-width: 1600px) {
   header nav menu {
     display: flex;
@@ -827,16 +831,8 @@ form {
     display: block;
   }
 }
-@media (max-width: 700px) {
-  header nav a:nth-last-child(-n+7) {
-    display: none;
-  }
-  mobilemenu a:nth-last-child(7) {
-    display: block;
-  }
-}
 @media screen and (max-width: 1250px) {
-  article, blog, books {
+  article, blog, books, .content {
     width: 90%;
   }
   .spoiler {

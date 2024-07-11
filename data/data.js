@@ -10,7 +10,7 @@ export const contact = [
     }
 ]
 
-export const idea = [
+export const brand = [
     {name: `Корни`, src: `/images/root.jpg`},
     {name: `Травы`, src: `/images/grass.jpg`},
     {name: `Коры`, src:  `/images/bark.jpg`},

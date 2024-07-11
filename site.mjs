@@ -107,11 +107,11 @@ class PageIndex extends Page {
         E.block.chi(
           E.div.props({class: `block-info`}).chi(
             E.h2.chi(`Идея`),
-            E.a.props({href: `/idea`}).chi(`Подробнее`),
+            E.a.props({href: `/brand`}).chi(`Подробнее`),
             E.div.chi(Md(`./data/idea.md`)).props({class: `idea`}),
           ),
           E.div.props({class: `idea-ingri`}).chi(
-            getItem(data.idea)
+            getItem(data.brand)
           )
         ),
         E.pattern.chi(E.div.chi(getIbri())),
@@ -158,40 +158,70 @@ function getIbri() {
 }
 
 
-// About //
-class PageAbout extends Page {
-  urlPath() {return `/about`}
-  title() {return `О нас`}
+// Idea //
+class PageIdea extends Page {
+  urlPath() {return `/brand`}
+  title() {return `О бренде`}
   
   body() {
-    const tit = `О нас`
-    const desc = `О нашей компании и истории`
+    const tit = `О бренде`
+    const desc = `Идея компании, история компании`
     const img = `https://sirseverin.ru/images/ibri.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
-        E.h1.chi(`О нас`),
-        E.block.chi(E.article.chi(Md('./data/about.md')))
+        E.h1.chi(`О бренде Ibri`),
+        E.div.props({class: `content`}).chi(Md('./data/brand.md'),
+          // E.div.props({class: `idea-ingri`}).chi(getItem(data.brand))
+        ),
       ),
       Footer(this)
     )
   }
 }
 
-// Idea //
-class PageIdea extends Page {
-  urlPath() {return `/idea`}
-  title() {return `Идея`}
+// About //
+// class PageAbout extends Page {
+//   urlPath() {return `/about`}
+//   title() {return `О нас`}
+  
+//   body() {
+//     const tit = `О нас`
+//     const desc = `О нашей компании и истории`
+//     const img = `https://sirseverin.ru/images/ibri.jpg`
+//     return Layout(tit, desc, img,
+//       Nav(this),
+//       E.main.chi(
+//         E.h1.chi(`О нас`),
+//         E.block.chi(E.article.chi(Md('./data/about.md')))
+//       ),
+//       Footer(this)
+//     )
+//   }
+// }
+
+
+// Product //
+class PageProduct extends Page {
+  urlPath() {return `/product`}
+  title() {return `Продукт`}
   
   body() {
-    const tit = `Идея`
-    const desc = `Идея компании`
+    const tit = `Продукт`
+    const desc = `Ибри. Ибри имбирный. Ибри русский.`
     const img = `https://sirseverin.ru/images/ibri.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
-        E.h1.chi(`Идея Ibri`),
-        E.block.chi(E.article.chi(Md('./data/idea.md'), getItem(data.idea))),
+        E.h1.chi(`Продукт`),
+        E.div.props({class: `content`}).chi(
+          data.pro.map((val) => {
+            return E.div.props({class: `u-pro`}).chi(
+              E.img.props({src: val.src, alt: val.name}),
+              E.h3.chi(val.name)
+            )
+          }),
+        ),
       ),
       Footer(this)
     )
@@ -211,7 +241,7 @@ class PageInvest extends Page {
       Nav(this),
       E.main.chi(
         E.h1.chi(`Инвесторам`),
-        E.block.chi(E.article.chi(Md('./data/invest.md')))
+        E.div.props({class: `content`}).chi(Md('./data/invest.md'))
       ),
       Footer(this)
     )
@@ -231,7 +261,7 @@ class PageCoop extends Page {
       Nav(this),
       E.main.chi(
         E.h1.chi(`Сотрудничество`),
-        E.block.chi(E.article.chi(Md('./data/coop.md')))
+        E.div.props({class: `content`}).chi(Md('./data/coop.md'))
       ),
       Footer(this)
     )
@@ -251,39 +281,13 @@ class PageBuy extends Page {
       Nav(this),
       E.main.chi(
         E.h1.chi(`Где купить`),
-        E.block.chi(E.article.chi(Md('./data/buy.md')))
+        E.div.props({class: `content`}).chi(Md('./data/buy.md'))
       ),
       Footer(this)
     )
   }
 }
 
-// Product //
-class PageProduct extends Page {
-  urlPath() {return `/product`}
-  title() {return `Продукт`}
-  
-  body() {
-    const tit = `Продукт`
-    const desc = `Ибри. Ибри имбирный. Ибри русский.`
-    const img = `https://sirseverin.ru/images/ibri.jpg`
-    return Layout(tit, desc, img,
-      Nav(this),
-      E.main.chi(
-        E.h1.chi(`Продукт`),
-        E.block.chi(
-          data.pro.map((val) => {
-            return E.div.props({class: `u-pro`}).chi(
-              E.img.props({src: val.src, alt: val.name}),
-              E.h3.chi(val.name)
-            )
-          }),
-        ),
-      ),
-      Footer(this)
-    )
-  }
-}
 
 
 // Post //
@@ -419,7 +423,7 @@ class Site extends a.Emp {
   constructor() {
     super()
     this.notFound = new Page404(this)
-    this.nav = [new PageIndex(this), new PageIdea(this), new PageProduct (this), new PageAbout(this), new PageBuy(this), new PageMix(this), new PageInvest(this), new PageCoop(this), new PagePost(this)]
+    this.nav = [new PageIndex(this), new PageIdea(this), new PageProduct (this), new PageBuy(this), new PageMix(this), new PageInvest(this), new PageCoop(this), new PagePost(this)]
     this.articles = Articles(this)
     // console.log(`This`, this)
   }
@@ -452,7 +456,7 @@ function Layout(tit, desc, img, ...chi) {
         a.vac(DEV) && E.script.chi(`navigator.serviceWorker.register('/sw.mjs')`),
         // Md(`./data/anal.md`)
       ),
-      E.body.props({class: `dark-theme`}).chi(chi, 
+      E.body.chi(chi, 
         E.div.props({class: `popup`, id: `popup`}).chi(
           E.span.props({class: `close`, id: `closeBtn`}).chi(`☓`),
           E.div.props({class: `popup-content`}).chi(
