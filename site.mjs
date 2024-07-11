@@ -74,8 +74,8 @@ class Page404 extends Page {
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
-        E.h1.chi(this.title()),
-        E.a.props({href: `/`, class: `error`}).chi(`Вернуться на главную`,
+        E.a.props({href: `/`, class: `error`}).chi(
+          E.h1.chi(this.title()),
           E.img.props({alt: `404`, src: `/images/404.jpg`, class: `error`})
         )        
       ),
@@ -468,7 +468,7 @@ function Layout(tit, desc, img, ...chi) {
 
 function Nav(page) {
   return E.header.chi(
-    E.a.props({href: `/`, class: `logo`}).chi(E.img.props({src: `/images/Ibri-logo-black.svg`, alt: `Ibri`})),
+    E.a.props({href: `/`, class: `logo`}).chi(E.img.props({src: `/images/Ibri-logo-white.svg`, alt: `Ibri`})),
     E.nav.chi(a.map(page.site.nav, PageLink), E.menu.chi(
       getMenu()
     )),
