@@ -246,7 +246,8 @@ block .idea a {
   text-decoration: underline 2px dotted blue;
   margin: auto 0 0 0;
 }
-block .idea-ingri {
+
+.idea-ingri {
   width: auto;
   display: flex;
   flex-wrap: wrap;
@@ -255,19 +256,19 @@ block .idea-ingri {
   gap: 10px;
   margin: 0 0 0 auto;
 }
-block .idea-ingri div {
+.idea-ingri div {
   width: 25em;
-  max-width: 45%;
+  max-width: 48%;
   overflow: hidden;
   border-radius: 10px;
   color: #028001;
   text-align: center;
 }
-block .idea-ingri div h3 {
+.idea-ingri div h3 {
   margin: 0;
   padding: 0;
 }
-block .idea-ingri .i-ingri {
+.idea-ingri .i-ingri {
   width: 100%;
   height: 15em;
   border-radius: 10px;
@@ -367,6 +368,17 @@ pattern img {
   text-decoration: underline 1px solid white;
 }
 
+.content {
+  width: 50%;
+  margin: 5em 0 0 0;
+}
+.content h3 {
+  font-size: 2em;
+}
+.content img {
+  width: 40%;
+}
+
 blog {
   margin: 5em 0;
   display: flex;
@@ -449,8 +461,11 @@ arttags .help {
 }
 
 article {
-  margin: 5em 0;
   width: 50%;
+  margin: 5em 0;
+}
+article h1 {
+  margin: 0;
 }
 article h2 {
   color: var(--text-color);
@@ -462,9 +477,6 @@ article p {
 article span {
   font-size: 0.9em;
   color: grey;
-}
-article span:last-child {
-  margin-top: 12em;
 }
 article img {
   width: 100%;
@@ -732,23 +744,23 @@ form input[type=checkbox]:checked + label {
   border: 2px solid white;
 }
 
-/* width */
 ::-webkit-scrollbar {
+  /* width */
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
+  /* Track */
   background: transparent;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
+  /* Handle */
   background: black;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
+  /* Handle on hover */
   background: black;
 }
 
@@ -824,17 +836,8 @@ form input[type=checkbox]:checked + label {
     display: block;
   }
 }
-@media (max-width: 700px) {
-  header nav a:nth-last-child(-n+7) {
-    display: none;
-  }
-
-  mobilemenu a:nth-last-child(7) {
-    display: block;
-  }
-}
 @media screen and (max-width: 1250px) {
-  article, blog, books {
+  article, blog, books, .content {
     width: 90%;
   }
 
