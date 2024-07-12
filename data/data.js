@@ -17,46 +17,33 @@ export const brand = [
     {name: `Ягоды`, src: `/images/berry.jpg`}
 ]
 export const pro = [
-    {name: 'Ибри классический', src: '/images/ibri-bottle.png', href: '/product/#ibric'},
-    {name: 'Ибри имбирный', src: '/images/ibri-bottle.png', href: '/product/#ibrii'},
-    {name: 'Ибри русский', src: '/images/ibri-bottle.png', href: '/product/#ibrir'},
+    {name: 'Ибри Классический', src: '/images/ibri-bottle.png', href: '/product#ibric', id: 'ibric',
+        desc: `Классика`,
+        ingri: `вода, сахар, мускатный орех, корица, элеутерококк, корень солодки, мелисса, чабрец, натуральный краситель сахарный колер.`
+    },
+    {name: 'Ибри Имбирный', src: '/images/ibri-bottle.png', href: '/product#ibrii', id: 'ibrii',
+        desc: `Взят за основу имбирь`,
+        ingri: `вода, сахар, имбирь, можжевельник, дрожжи, соль.`
+    },
+    {name: 'Ибри Русский', src: '/images/ibri-bottle.png', href: '/product#ibrir', id: 'ibrir',
+        desc: `Ингридиенты только те, которые растут в России`,
+        ingri: `вода, сахар, элеутерококк, корень солодки, мелисса, чабрец, хвоя пихты, листья эвкалипта, дубовая кора, можжевельник, натуральный краситель сахарный колер, соль.`
+    },
 ] 
 export const arttags = [
-    `общество`,
-    `история`,
+    `сайт`,
+    `новости`,
 ]
 export const list = [
     {
         'id': '0',
-        'dataindex': 'gosudarstvo-kak-brend',
-        'path': './post/gosudarstvo-kak-brend.md',
-        'h3': 'Государство как бренд',
-        'src': '/images/art-images/gosudarstvo-kak-brend-by-pavel-neznanov.jpg',
-        'alt': 'By Pavel Neznanov',
-        'date': 'Дата публикации: 14 марта 2024',
-        'p': 'Есть ли у личности идентичность с государством?',
-        'tags': [`общество`,],
-    },
-    {
-        'id': '1',
-        'dataindex': 'grazhdane-est-gosudarstvo',
-        'path': './post/grazhdane-est-gosudarstvo.md',
-        'h3': 'Граждане есть государство',
-        'src': '/images/art-images/grazhdane-est-gosudarstvo-by-pavel-neznanov.jpg',
-        'alt': 'By Pavel Neznanov',
-        'date': 'Дата публикации: 14 марта 2024',
-        'p': 'Дистанция между управленцами и рядовыми гражданами государства',
-        'tags': [`общество`,],
-    },
-    {
-        'id': '2', 
-        'dataindex': 'konkurenciya-istoriya',
-        'path': './post/konkurenciya-istoriya.md',
-        'h3': 'Конкуренция, история',
-        'src': '/images/art-images/konkurenciya-istoriya-by-Nikita-Ermilov.jpg',
-        'alt': 'By Nikita Ermilov',
-        'date': 'Дата публикации: 14 марта 2024',
-        'p': 'Диалог не воспринимается конечным способом решения проблем',
-        'tags': [`общество`, `история`,],
+        'dataindex': 'zapusk-sajta-ibri',
+        'path': './post/zapusk-sajta-ibri.md',
+        'h3': 'Запуск сайта Ибри',
+        'src': '/images/post-images/zapusk-sajta-ibri.jpg',
+        'alt': 'Сайт Ибри',
+        'date': 'Дата публикации: 1 сентября 2024',
+        'p': 'Запуск веб-сайта бренда Ибри',
+        'tags': [`новости`, `сайт`],
     },
 ]
