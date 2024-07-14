@@ -50,7 +50,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @include geologica($weight: 400);
+  @include geologica($weight: 400, $cursive: 0, $sharpness: 50);
 }
 header, footer, nav, a {
   display: flex;
@@ -337,20 +337,22 @@ pattern {
   .u-pro {
     // width: auto;
     width: 25%;
+    height: 25em;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 0 2%;
     // background-color: white;
-    // border-radius: 10px;
+    border-radius: 20px;
     h3 {
       text-align: center;
       width: 80%;
       margin: 2em 0 0 0;
       padding: 0;
       @include geologica($weight: 700, $cursive: 0, $sharpness: 100);
-      color: black;
+      color: white;
+
     }
     img {
       width: auto;
@@ -404,15 +406,10 @@ pattern {
     margin: 2em 0 1em 0;
   }
   a {
-    // display: inline-block;
-    width: 10em;
-    margin: 1em 0;
-    background-color: $primary;
-    border-radius: 30px;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    padding: 1em;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    text-decoration: underline;
   }
   img {
     width: 60%;
@@ -474,6 +471,19 @@ pattern {
       height: 70%;
     }
   }
+  .a-design {
+    // display: inline-block;
+    width: 10em;
+    margin: 1em 0;
+    background-color: $primary;
+    border-radius: 30px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
+  }
   .product-about {
     width: 65%;
     margin: 0 0 0 5%;
@@ -492,6 +502,15 @@ pattern {
   background-color: #d2a45d;
 }
 .product:nth-of-type(3) .product-img {
+  background-color: #ffb7b4;
+}
+.units-pro > .u-pro:nth-child(n+1) {
+  background-color: #986544;
+}
+.units-pro > .u-pro:nth-child(n+2) {
+  background-color: #d2a45d;
+}
+.units-pro > .u-pro:nth-child(n+3) {
   background-color: #ffb7b4;
 }
 blog {
@@ -1003,18 +1022,17 @@ form {
         margin: 1em 0;
         border-radius: 20px;
         background-color: white;
-        border-radius: 10px;
       }
     }
-    .units-pro > .u-pro:nth-child(n+1) {
-      background-color: #986544;
-    }
-    .units-pro > .u-pro:nth-child(n+2) {
-      background-color: #d2a45d;
-    }
-    .units-pro > .u-pro:nth-child(n+3) {
-      background-color: #ffb7b4;
-    }
+    // .units-pro > .u-pro:nth-child(n+1) {
+    //   background-color: #986544;
+    // }
+    // .units-pro > .u-pro:nth-child(n+2) {
+    //   background-color: #d2a45d;
+    // }
+    // .units-pro > .u-pro:nth-child(n+3) {
+    //   background-color: #ffb7b4;
+    // }
 }
 .content {
   table {

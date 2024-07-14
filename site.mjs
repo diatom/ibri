@@ -198,7 +198,7 @@ class PageProduct extends Page {
                 E.div.props({class: `product-img`}).chi(E.img.props({src: val.src, alt: val.name})),
                 E.div.props({class: `product-about`}).chi(
                   E.h2.chi(val.name),
-                  E.a.props({href: `/wherebuy`}).chi(`Купить`),
+                  E.a.props({href: `/wherebuy`, class: `a-design`}).chi(`Купить`),
                   E.p.chi(val.desc),
                   E.p.chi(`Ингридиенты: ` + val.ingri),
                 )
