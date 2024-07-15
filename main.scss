@@ -4,8 +4,13 @@ $dark-bg-color: hsl(0, 0%, 14%);
 $dark-text-color: white;
 $primary: #3A7189;
 $second: #028001;
+$cinnamon: #986544;
+$ginger: #d2a45d;
+$russian: #ffb7b4;
 $geologica-font: "Geologica", sans-serif;
 $mulish-font: "Mulish", sans-serif;
+$transition-duration: 0.3s;
+$hover-scale: 1.03;
 
 @mixin geologica($weight: 400, $cursive: 0, $sharpness: 50) {
     font-family: $geologica-font;
@@ -23,10 +28,6 @@ $mulish-font: "Mulish", sans-serif;
     font-weight: $weight;
     font-style: normal;
 }
-
-$transition-duration: 0.3s;
-$hover-scale: 1.03;
-
 @mixin img-styles($transition-duration) {
   cursor: pointer;
   max-width: 100%;
@@ -39,7 +40,6 @@ $hover-scale: 1.03;
   -webkit-transform: scale($scale);
   transform: scale($scale);
 }
-
 body {
   background-color: #EEEEEE;
   color: var(--text-color);
@@ -180,14 +180,10 @@ heyibri {
     font-size: 3em;
     margin: 2em 0 1em 0;
     padding: 0;
-    background-color: $primary;
-    color: white;
+    color: $primary;
     max-width: 70%;
     @include geologica($weight: 1000, $cursive: 0, $sharpness: 20);
   }
-  // h1 span{
-  //   color: $primary;
-  // }
   div {
     margin: 2em 0;
   }
@@ -411,7 +407,7 @@ pattern {
     display: inline-block;
     text-decoration: underline;
   }
-  img {
+  img, video {
     width: 60%;
     margin: 2em 0;
     display: block;
@@ -495,23 +491,14 @@ pattern {
     }
   }
 }
-.product:nth-of-type(1) .product-img {
-  background-color: #986544;
+.product:nth-of-type(1) .product-img, .units-pro > .u-pro:nth-child(n+1) {
+  background-color: $cinnamon;
 }
-.product:nth-of-type(2) .product-img {
-  background-color: #d2a45d;
+.product:nth-of-type(2) .product-img, .units-pro > .u-pro:nth-child(n+2) {
+  background-color: $ginger;
 }
-.product:nth-of-type(3) .product-img {
-  background-color: #ffb7b4;
-}
-.units-pro > .u-pro:nth-child(n+1) {
-  background-color: #986544;
-}
-.units-pro > .u-pro:nth-child(n+2) {
-  background-color: #d2a45d;
-}
-.units-pro > .u-pro:nth-child(n+3) {
-  background-color: #ffb7b4;
+.product:nth-of-type(3) .product-img, .units-pro > .u-pro:nth-child(n+3) {
+  background-color: $russian;
 }
 blog {
   margin: 5em 0;
@@ -902,6 +889,22 @@ form {
 ::-webkit-scrollbar-thumb:hover { /* Handle on hover */
   background: black;
 }
+video::-webkit-media-controls-panel {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none !important;
+}
+video::-moz-media-controls-panel {
+  display: none !important;
+  -appearance: none !important;
+}
+video::-moz-media-controls-start-playback-button {
+    display: none !important;
+    -appearance: none !important;
+}
 @media (max-width: 1500px) {
   header nav menu {
     display: flex;
@@ -1062,7 +1065,7 @@ form {
   table {
     font-size: 0.8em;
   }
-  img {
+  img, video {
     width: 100%;
   }
 }

@@ -147,8 +147,7 @@ heyibri h1 {
   font-size: 3em;
   margin: 2em 0 1em 0;
   padding: 0;
-  background-color: #3A7189;
-  color: white;
+  color: #3A7189;
   max-width: 70%;
   font-family: "Geologica", sans-serif;
   font-optical-sizing: auto;
@@ -387,7 +386,7 @@ pattern img {
   display: inline-block;
   text-decoration: underline;
 }
-.content img {
+.content img, .content video {
   width: 60%;
   margin: 2em 0;
   display: block;
@@ -471,27 +470,15 @@ pattern img {
   color: grey;
 }
 
-.product:nth-of-type(1) .product-img {
+.product:nth-of-type(1) .product-img, .units-pro > .u-pro:nth-child(n+1) {
   background-color: #986544;
 }
 
-.product:nth-of-type(2) .product-img {
+.product:nth-of-type(2) .product-img, .units-pro > .u-pro:nth-child(n+2) {
   background-color: #d2a45d;
 }
 
-.product:nth-of-type(3) .product-img {
-  background-color: #ffb7b4;
-}
-
-.units-pro > .u-pro:nth-child(n+1) {
-  background-color: #986544;
-}
-
-.units-pro > .u-pro:nth-child(n+2) {
-  background-color: #d2a45d;
-}
-
-.units-pro > .u-pro:nth-child(n+3) {
+.product:nth-of-type(3) .product-img, .units-pro > .u-pro:nth-child(n+3) {
   background-color: #ffb7b4;
 }
 
@@ -900,6 +887,26 @@ form input[type=checkbox]:checked + label {
   background: black;
 }
 
+video::-webkit-media-controls-panel {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+video::-moz-media-controls-panel {
+  display: none !important;
+  -appearance: none !important;
+}
+
+video::-moz-media-controls-start-playback-button {
+  display: none !important;
+  -appearance: none !important;
+}
+
 @media (max-width: 1500px) {
   header nav menu {
     display: flex;
@@ -1046,7 +1053,7 @@ form input[type=checkbox]:checked + label {
   .content table {
     font-size: 0.8em;
   }
-  .content img {
+  .content img, .content video {
     width: 100%;
   }
   footer {

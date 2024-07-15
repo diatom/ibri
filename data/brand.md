@@ -25,7 +25,10 @@
 
 
 <!-- ![Ибри](/images/ibri-gif.gif) -->
-![Video](/images/ibri-video.mp4)
+<video controls muted loop autoplay>
+  <source src="/images/ibri-video.mp4" type="video/mp4">
+  Ваш браузер не поддерживает воспроизведение этого видео.
+</video>
 
 ### История бренда
 

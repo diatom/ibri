@@ -3,7 +3,6 @@ export const contact = [
     {'Telegram: @Severinz': `https://telegram.me/Severinz`},
     {'+7 (903) 186-93-32': `tel:+79031869332`}
 ]
-
 export const brand = [
     {name: `Корни`, src: `/images/root.jpg`},
     {name: `Травы`, src: `/images/grass.jpg`},
