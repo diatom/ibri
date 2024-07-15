@@ -538,7 +538,7 @@ blog div {
 
 tags {
   width: 100%;
-  margin: 2em 0;
+  margin: 1em 0;
 }
 tags .btn {
   cursor: pointer;
@@ -641,15 +641,39 @@ books .book p, books .cheese p {
 }
 books .book span, books .cheese span {
   font-size: 0.8em;
-  color: white;
+  color: #3A7189;
 }
 books .book h3, books .cheese h3 {
   margin: 0.5em 0;
 }
+books .book table, books .cheese table {
+  width: 60%;
+  text-align: left;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0;
+  background-color: white;
+}
+books .book table td, books .cheese table td {
+  border: 1px dotted #ccc;
+  padding: 10px;
+}
+books .book table tbody, books .cheese table tbody {
+  text-align: left;
+}
+books .book table tbody img, books .cheese table tbody img {
+  width: 100%;
+}
+books .book table th, books .cheese table th {
+  display: none;
+  color: #666;
+  font-weight: bold;
+}
 books .cheese {
-  max-width: 40em;
-  width: 45%;
-  padding: 0 0 0 0.6em;
+  max-width: 80em;
+  width: 85%;
+  height: 30em;
+  padding: 1em 0 1em 1em;
   position: relative;
   display: flex;
   overflow: hidden;
@@ -658,7 +682,7 @@ books .cheese div {
   width: 60%;
 }
 books .cheese img {
-  width: 35%;
+  width: 45%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -680,7 +704,7 @@ books .cheese img:hover {
 .info-books, .info-cheeses {
   display: flex;
   flex-direction: column;
-  margin: 3em 0 0 0;
+  margin: 2em 0 0 0;
   width: 60%;
   max-width: 70em;
   background-size: 100% auto;
