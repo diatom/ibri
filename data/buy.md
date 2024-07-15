@@ -10,4 +10,4 @@
 
 Технология продукта разработана на незыблемой [Идее](/brand)
 
-![Meme](/images/coop2.jpg)
+![Meme](/images/shelf.jpg)

@@ -11,7 +11,7 @@ import * as l from './live.mjs'
 import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
 
 import * as data from './data/data.js';
-import * as cheese from './data/data-cheese.js'
+import * as co from './data/cocktails.js'
 
 const {E} = new p.Ren(dg.document).patchProto(dg.glob.Element)
 
@@ -352,21 +352,22 @@ class PageMix extends Page {
               )
             )
           ),
-          BookTags(cheese.t),
+          BookTags(co.t),
         ),
         E.books.chi(
-          cheese.c.map((val) => {
+          co.c.map((val) => {
             return E.div.props({class: `cheese`, id: val.Id}).chi(
               E.div.chi(
-                E.span.chi(val.Id),
+                // E.span.chi(val.Id),
                 E.h3.chi(val.name),
-                E.p.chi(`Срок созревания: ` + val.age),
-                E.p.chi(`Молоко: ` + val.milk),
-                E.p.chi(`Первое упоминание: ` + val.since),
-                E.p.chi(`Тип: ` + val.type),
-                E.p.chi(`Вкус: ` + val.taste),
-                E.p.chi(`Плесень: ` + val.mold),
-                E.p.chi(`Описание: ` + val.description),
+                E.table.chi(
+                  E.thead.chi(E.tr.chi(E.th.chi(`Ингридиенты`), E.th.chi())),
+                  E.tbody.chi(
+                    Table(val)
+                  ),
+                ),
+                E.h4.chi(`Рецепт`),
+                E.p.chi(val.description),
                 ArtTags(val.tags),
               ),
               E.img.props({src: val.img, alt: val.name})
@@ -379,6 +380,17 @@ class PageMix extends Page {
     )
   }
 }
+function Table(a) {
+  const val = a
+  const ing = Object.keys(val).filter(key => key.startsWith('ingre'))
+  const rows = ing.map(field => {
+    const cells = val[field].map(elem => E.td.chi(elem))
+    return E.tr.chi(cells)
+  })
+  return rows
+}
+
+
 
 class Site extends a.Emp {
   constructor() {

@@ -555,7 +555,7 @@ blog {
 }
 tags {
   width: 100%;
-  margin: 2em 0;
+  margin: 1em 0;
   .btn {
     cursor: pointer;
     background-color: rgba(128, 128, 128, 0);
@@ -656,17 +656,41 @@ books {
     }
     span {
       font-size: 0.8em;
-      color: white;
+      color: $primary;
     }
     h3 {
       margin: 0.5em 0;
     }
+    table {
+      width: 60%;
+      text-align: left;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin: 0;
+      background-color: white;
+      td {
+        border: 1px dotted #ccc;
+        padding: 10px;
+      }
+      tbody {
+        text-align: left;
+        img {
+          width: 100%;
+        }
+      }
+      th {
+        display: none;
+        color: #666;
+        font-weight: bold;
+      }
+    }
   }
 
   .cheese {
-    max-width: 40em;
-    width: 45%;
-    padding: 0 0 0 0.6em;
+    max-width: 80em;
+    width: 85%;
+    height: 30em;
+    padding: 1em 0 1em 1em;
     position: relative; 
     display: flex;
     overflow: hidden;
@@ -674,7 +698,7 @@ books {
       width: 60%;
     }
     img {
-      width: 35%;
+      width: 45%;
       height: 100%;
       position: absolute;
       top: 0;
@@ -693,7 +717,7 @@ books {
 .info-books, .info-cheeses {
   display: flex;
   flex-direction: column;
-  margin: 3em 0 0 0;
+  margin: 2em 0 0 0;
   width: 60%;
   max-width: 70em;
   // background-image: url('./images/books.jpg');

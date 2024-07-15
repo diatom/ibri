@@ -24,7 +24,8 @@
 | | Мускатный орех | Ибри Классический |
 
 
-![Ибри](/images/ibri-gif.gif)
+<!-- ![Ибри](/images/ibri-gif.gif) -->
+![Video](/images/ibri-video.mp4)
 
 ### История бренда
 
