@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 // Popup image
-const images = document.querySelectorAll('article img, .cheese img, .spoiler img')
+const images = document.querySelectorAll('article img, .cockt img, .spoiler img')
 const popup = document.getElementById('popup')
 const popupImage = document.getElementById('popupImage')
 const closeBtn = document.getElementById('closeBtn')
@@ -65,7 +65,7 @@ if (window.location.pathname.startsWith('/post') || window.location.pathname ===
   document.addEventListener('DOMContentLoaded', function() {
     const tagsContainer = document.querySelector('tags')
     const buttons = tagsContainer.querySelectorAll('button[type="button"]')
-    const blogDivs = document.querySelectorAll('.filter, .book, .cheese')
+    const blogDivs = document.querySelectorAll('.filter, .cockt')
     const activeTags = new Set()
 
     buttons.forEach(button => {
@@ -112,22 +112,13 @@ if (window.location.pathname === `/mixology`) {
   const searchButton = document.getElementById(`searchButton`)
 
   function searchDataBook(input) {
-    const divb = document.getElementsByClassName(`book`)
-    const divs = document.getElementsByClassName(`cheese`)
+    const divs = document.getElementsByClassName(`cockt`)
     for (const elem of divb) {
       let result = elem.innerHTML.toLowerCase().includes(input)
       if (result) {
         elem.hidden = false
       } else {
         elem.hidden = true
-      } 
-    }
-    for (const elem of divs) {
-      let result = elem.innerHTML.toLowerCase().includes(input)
-      if (result) {
-        elem.style.display = `block`
-      } else {
-        elem.style.display = `none`
       } 
     }
   }

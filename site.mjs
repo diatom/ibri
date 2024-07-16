@@ -331,7 +331,7 @@ class PageMix extends Page {
       Nav(this),
       E.main.chi(
         E.h1.chi(`Коктейли`),
-        E.div.props({class: `info-cheeses`}).chi(
+        E.div.props({class: `info-cockt`}).chi(
           // E.div.props({class: `spoiler`}).chi(
           //   E.div.props({class: `spoiler-header`}).chi(
           //     E.span.props({class: `toggle-icon`}).chi(`▶`),
@@ -353,9 +353,9 @@ class PageMix extends Page {
           ),
           BookTags(co.t),
         ),
-        E.books.chi(
+        E.cocktails.chi(
           co.c.map((val) => {
-            return E.div.props({class: `cheese`, id: val.Id}).chi(
+            return E.div.props({class: `cockt`, id: val.Id}).chi(
               E.div.chi(
                 // E.span.chi(val.Id),
                 E.h3.chi(val.name),
@@ -365,8 +365,12 @@ class PageMix extends Page {
                     Table(val)
                   ),
                 ),
-                E.h4.chi(`Рецепт`),
-                E.p.chi(val.description),
+                E.h4.chi(`Рецепт:`),
+                E.ol.chi(
+                  val.recipe.map((v) => {
+                    return E.li.chi(v)
+                  })
+                ),
                 ArtTags(val.tags),
               ),
               E.img.props({src: val.img, alt: val.name})
