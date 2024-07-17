@@ -197,7 +197,8 @@ class PageProduct extends Page {
                 E.div.props({class: `product-img`}).chi(E.img.props({src: val.src, alt: val.name})),
                 E.div.props({class: `product-about`}).chi(
                   E.h2.chi(val.name),
-                  E.a.props({href: `/wherebuy`, class: `a-design`}).chi(`Купить`),
+                  E.a.props({href: `/wherebuy`, class: `a-buy`}).chi(`Купить`),
+                  E.button.props({class: `a-cockt`, id: val.id}).chi(`Коктейли`),
                   E.p.chi(val.desc),
                   E.p.chi(`Ингридиенты: ` + val.ingri),
                 )
@@ -355,7 +356,7 @@ class PageMix extends Page {
         ),
         E.cocktails.chi(
           co.c.map((val) => {
-            return E.div.props({class: `cockt`, id: val.Id}).chi(
+            return E.div.props({class: `cockt`, id: val.id}).chi(
               E.div.chi(
                 // E.span.chi(val.Id),
                 E.h3.chi(val.name),
@@ -522,11 +523,19 @@ function ArtTags(tag) {
 function BookTags(tag) {
   return E.tags.chi(
     E.span.props({class: `help`}).chi(`Теги:`),
-    tag.map(val => 
-      E.button.props({type: `button`, class: `btn`}).chi(E.span.chi(`#`), val)
+    tag.map(val =>
+      E.button.props({type: `button`, class: `btn`, id: val.id}).chi(E.span.chi(`#`), val.n)
     )
   )
 }
+// function BookTags(tag) {
+//   return E.tags.chi(
+//     E.span.props({class: `help`}).chi(`Теги:`),
+//     tag.map(val => 
+//       E.button.props({type: `button`, class: `btn`}).chi(E.span.chi(`#`), val)
+//     )
+//   )
+// }
 
 function Md(md) {
   return new p.Raw(marked(Deno.readTextFileSync(md)))

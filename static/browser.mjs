@@ -22,18 +22,14 @@ The site was made by Severin B. https://sirseverin.ru/
 document.addEventListener('DOMContentLoaded', function() {
   const menuIcon = document.querySelector('menu')
   const mobileMenu = document.querySelector('mobilemenu')
-
   menuIcon.addEventListener('click', function() {
     mobileMenu.style.display = `flex`
   })
-
   mobileMenu.addEventListener(`click`, (e) => {
     if (e.target === mobileMenu) {
         mobileMenu.style.display = `none`
     }
-
   })
-
   document.addEventListener('click', function(e) {
     if (mobileMenu.style.display === 'flex' && e.target !== mobileMenu && e.target !== menuIcon) {
       mobileMenu.style.display = 'none '
@@ -53,17 +49,14 @@ images.forEach(image => {
       popup.style.display = 'flex'
   })
 })
-
 closeBtn.addEventListener('click', () => {
     popup.style.display = 'none'
 })
-
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     popup.style.display = 'none'
   }
 })
-
 popup.addEventListener('click', (e) => {
     if (e.target === popup) {
         popup.style.display = 'none'
@@ -116,6 +109,27 @@ if (window.location.pathname.startsWith('/post') || window.location.pathname ===
   })
 }
 
+// Product press cocktails
+document.addEventListener('DOMContentLoaded', function() {
+  const cocktButtons = document.querySelectorAll('.a-cockt')
+  cocktButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const buttonId = this.id
+      localStorage.setItem('buttonToPress', buttonId)
+      window.location.href = '/mixology'
+    })
+  })
+})
+document.addEventListener('DOMContentLoaded', function() {
+  const buttonToPressId = localStorage.getItem('buttonToPress')
+  if (buttonToPressId) {
+    const buttonToPress = document.getElementById(buttonToPressId)
+    if (buttonToPress) {
+      buttonToPress.click()
+    }
+    localStorage.removeItem('buttonToPress')
+  }
+})
 
 // Search
 if (window.location.pathname === `/mixology`) {

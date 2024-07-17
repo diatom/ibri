@@ -479,18 +479,27 @@ pattern {
       height: 70%;
     }
   }
-  .a-design {
-    // display: inline-block;
-    width: 10em;
+  .a-buy, .a-cockt {
+    display: block;
+    cursor: pointer;
+    width: 12em;
     margin: 1em 0;
     background-color: $primary;
     border-radius: 30px;
     color: white;
     align-items: center;
     justify-content: center;
-    padding: 1em;
+    border: none;
+    padding: 0.7em 0;
     text-align: center;
     text-decoration: none;
+    font-size: 1em;
+    @include geologica($weight: 400, $cursive: 0, $sharpness: 50);
+  }
+  .a-cockt {
+    background-color: black;
+    color: white;
+    // padding: 0.5em 1em;
   }
   .product-about {
     width: 65%;
