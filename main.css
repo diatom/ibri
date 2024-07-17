@@ -459,17 +459,30 @@ pattern img {
   width: auto;
   height: 70%;
 }
-.product .a-design {
-  width: 10em;
+.product .a-buy, .product .a-cockt {
+  display: block;
+  cursor: pointer;
+  width: 12em;
   margin: 1em 0;
   background-color: #3A7189;
   border-radius: 30px;
   color: white;
   align-items: center;
   justify-content: center;
-  padding: 1em;
+  border: none;
+  padding: 0.7em 0;
   text-align: center;
   text-decoration: none;
+  font-size: 1em;
+  font-family: "Geologica", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0, "CRSV" 0, "SHRP" 50;
+}
+.product .a-cockt {
+  background-color: black;
+  color: white;
 }
 .product .product-about {
   width: 65%;
