@@ -1,11 +1,22 @@
 import * as p from 'https://cdn.jsdelivr.net/npm/@mitranim/js@0.1.25/prax.mjs'
-
-
 const {E} = p.Ren.native()
 console.log(`Hello, welcome to the website of the Ibri carbonated drinks brand.
-The site was made by Severin B. (sirseverin.ru)
-༼ つ ◕_◕ ༽つ`)
+The site was made by Severin B. https://sirseverin.ru/
+༼ つ ◕_◕ ༽つ
 
+
+
+██████╗░██████╗░██╗███╗░░██╗██╗░░██╗  ██╗██████╗░██████╗░██╗
+██╔══██╗██╔══██╗██║████╗░██║██║░██╔╝  ██║██╔══██╗██╔══██╗██║
+██║░░██║██████╔╝██║██╔██╗██║█████═╝░  ██║██████╦╝██████╔╝██║
+██║░░██║██╔══██╗██║██║╚████║██╔═██╗░  ██║██╔══██╗██╔══██╗██║
+██████╔╝██║░░██║██║██║░╚███║██║░╚██╗  ██║██████╦╝██║░░██║██║
+╚═════╝░╚═╝░░╚═╝╚═╝╚═╝░░╚══╝╚═╝░░╚═╝  ╚═╝╚═════╝░╚═╝░░╚═╝╚═╝
+
+
+█▀▄▀█ ▄▀█ █▄▀ █▀▀   █░░ █▀█ █░█ █▀▀
+█░▀░█ █▀█ █░█ ██▄   █▄▄ █▄█ ▀▄▀ ██▄
+`)
 
 // Menu
 document.addEventListener('DOMContentLoaded', function() {

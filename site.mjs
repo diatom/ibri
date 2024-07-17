@@ -153,7 +153,7 @@ function getItem(a) {
   })
 }
 function getIbri() {
-  return Array.from({ length: 200 }, () => E.img.props({src: `/images/Ibri-logo-white.svg`, alt: `ibri`}))
+  return Array.from({ length: 200 }, () => E.img.props({src: `/images/ibri-logo-white.svg`, alt: `ibri`}))
 }
 
 // Idea //
@@ -263,7 +263,7 @@ class PagePost extends Page {
       Nav(this),
       E.main.chi(
         E.blog.chi(
-          E.h2.chi(`Все публикации`),
+          // E.h2.chi(`Все публикации`),
           AllTags(this),
             data.list.map((val) => {
             return E.div.props({id: val.id, dataindex: val.dataindex, class: `filter`}).chi(
@@ -464,9 +464,9 @@ function NavFooter(page) {
   return E.nav.chi(a.map(page.site.nav, PageLink)
     )
 }
-
+const currentYear = new Date().getFullYear();
 function Footer(page) {
-  return E.footer.chi(
+  return E.footer.props({id: `footer`}).chi(
     E.img.props({alt: `Ibri`, src: `/images/Ibri-logo-white.svg`}),
     E.p.chi(`Ibri® — все права защищены. Любое использование либо копирование материалов сайта, 
       допускается только cо ссылкой на источник`),
@@ -475,7 +475,7 @@ function Footer(page) {
       ),
       NavFooter(page),
     E.span.chi(E.a.props({href: `https://github.com/diatom/ibri`}).
-    chi(`© 2024. Сайт сделал Severin B. 👾`)
+    chi(`© ${currentYear}. Сайт сделал Severin B. 👾`)
     )
   )
 }

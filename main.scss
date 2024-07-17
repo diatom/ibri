@@ -394,11 +394,15 @@ pattern {
   margin: 3em 0 0 0;
   // display: flex;
   // flex-direction: column;
+  .head-content a {
+    display: block;
+    margin: 0.5em 0;
+  }
   h3 {
     font-size: 2em;
     margin: 2em 0 1em 0;
   }
-  h4 {
+  h2, h4 {
     margin: 2em 0 1em 0;
   }
   a {
@@ -407,8 +411,16 @@ pattern {
     display: inline-block;
     text-decoration: underline;
   }
-  img, video {
+  img {
     width: 60%;
+    margin: 2em 0;
+    display: block;
+    border-radius: 10px;
+  }
+  video {
+    width: 100%;
+    height: 30em;
+    object-fit: cover;
     margin: 2em 0;
     display: block;
     border-radius: 10px;
@@ -439,7 +451,7 @@ pattern {
     tr > td:first-child {
       font-weight: bold;
       color: $second;
-      width: 25%;
+      width: 20%;
     }
     tr > td:nth-child(2) {
       font-weight: bold;
@@ -1072,6 +1084,10 @@ video::-moz-media-controls-start-playback-button {
   .content {
     table {
     font-size: 0.8em;
+    tr > td:nth-child(2) {
+      font-weight: bold;
+      width: 20%;
+    }
   }
   img, video {
     width: 100%;
