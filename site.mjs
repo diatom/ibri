@@ -426,7 +426,7 @@ function Layout(tit, desc, img, ...chi) {
         E.meta.props({property: `og:image:height`, content: `600`}),
         E.meta.props({property: `og:image:width`, content: `300`}),
         E.meta.props({property: `og:image:type`, content: `image/jpeg`}),
-        E.link.props({rel: `icon`, type: `image/x-icon`, href: `/images/Ibri.ico`}),
+        E.link.props({rel: `icon`, type: `image/x-icon`, href: `/images/ibri.ico`}),
         E.link.props({rel: `stylesheet`, href: `/main.css`}),
         E.style.chi(`@import url('https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV,SHRP@100..900,0..1,0..100&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');`),
         a.vac(DEV) && E.script.chi(`navigator.serviceWorker.register('/sw.mjs')`),
@@ -448,7 +448,7 @@ function Layout(tit, desc, img, ...chi) {
 
 function Nav(page) {
   return E.header.chi(
-    E.a.props({href: `/`, class: `logo`}).chi(E.img.props({src: `/images/Ibri-logo-white.svg`, alt: `Ibri`})),
+    E.a.props({href: `/`, class: `logo`}).chi(E.img.props({src: `/images/ibri-logo-white.svg`, alt: `Ibri`})),
     E.nav.chi(a.map(page.site.nav, PageLink), E.menu.chi(
       getMenu()
     )),
@@ -467,7 +467,7 @@ function NavFooter(page) {
 const currentYear = new Date().getFullYear();
 function Footer(page) {
   return E.footer.props({id: `footer`}).chi(
-    E.img.props({alt: `Ibri`, src: `/images/Ibri-logo-white.svg`}),
+    E.img.props({alt: `Ibri`, src: `/images/ibri-logo-white.svg`}),
     E.p.chi(`Ibri® — все права защищены. Любое использование либо копирование материалов сайта, 
       допускается только cо ссылкой на источник`),
       E.div.chi(
