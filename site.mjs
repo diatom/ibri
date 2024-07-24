@@ -83,8 +83,6 @@ class Page404 extends Page {
   }
 }
 
-
-
 // Main //
 class PageIndex extends Page {
   urlPath() {return `/`}
@@ -93,15 +91,15 @@ class PageIndex extends Page {
 
   body() {
   const tit = `Ibri`
-  const desc = `Ибри — авторские напитки. Продукт, идея, миксология.`
+  const desc = `Ибри (Ibri) — авторские газированные напитки. Продукт бренда Ибри, идея Ибри.`
   const img = `https://sirseverin.ru/images/ibri.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
         E.heyibri.chi(
-          E.h1.chi(E.span.chi(`Ибри`), ` — это ещё и вкусный напиток`),
+          // E.h1.chi(E.span.chi(`Ибри`), ` — это ещё и вкусный напиток`),
           E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
-          E.div.chi(`Приветствуем тебя. Надеемся, что ты найдёшь здесь то, что ищешь. Будем!`)
+          E.div.chi(`Приветствуем тебя на сайте напитков Ибри! :)`)
         ),
         E.block.chi(
           E.div.props({class: `block-info`}).chi(
@@ -163,7 +161,7 @@ class PageIdea extends Page {
   
   body() {
     const tit = `О бренде`
-    const desc = `Идея компании, история компании`
+    const desc = `Идея компании, история компании Ибри.`
     const img = `https://sirseverin.ru/images/ibri.jpg`
     return Layout(tit, desc, img,
       Nav(this),
@@ -185,7 +183,7 @@ class PageProduct extends Page {
   
   body() {
     const tit = `Продукт`
-    const desc = `Ибри. Ибри имбирный. Ибри русский.`
+    const desc = `Ибри Классический. Ибри Имбирный. Ибри Русский.`
     const img = `https://sirseverin.ru/images/ibri.jpg`
     return Layout(tit, desc, img,
       Nav(this),
@@ -238,7 +236,7 @@ class PageBuy extends Page {
   
   body() {
     const tit = `Где купить`
-    const desc = `Где купить Ибри`
+    const desc = `Где купить Ибри.`
     const img = `https://sirseverin.ru/images/ibri.jpg`
     return Layout(tit, desc, img,
       Nav(this),
@@ -263,6 +261,7 @@ class PagePost extends Page {
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
+        E.h1.chi(`Публикации`),
         E.blog.chi(
           // E.h2.chi(`Все публикации`),
           AllTags(this),
@@ -326,7 +325,7 @@ class PageMix extends Page {
   body() {
     const acheese =  Deno.readTextFileSync(`./data/cheese.md`)
     const tit = `Миксология`
-    const desc = `Рецепты коктейлей`
+    const desc = `Рецепты коктейлей с напитками Ибри и не только с ними.`
     const img = `https://sirseverin.ru/images/ibri.jpg`
     return Layout(tit, desc, img,
       Nav(this),
@@ -417,7 +416,7 @@ function Layout(tit, desc, img, ...chi) {
         E.meta.props({name: `viewport`, content: `width=device-width, initial-scale=1`}),
         E.title.chi(tit),
         E.meta.props({name: `description`, content: desc}),
-        E.meta.props({name: `keywords`, content: `газированный напиток, коктейли, натуральный, миксология`}),
+        E.meta.props({name: `keywords`, content: `газированные напитки, коктейли, натуральные напитки, миксология`}),
         E.meta.props({property: `og:title`, content: tit}),
         E.meta.props({property: `og:description`, content: desc}),
         E.meta.props({property: `og:type`, content: `website`}),
@@ -431,7 +430,7 @@ function Layout(tit, desc, img, ...chi) {
         E.link.props({rel: `stylesheet`, href: `/main.css`}),
         E.style.chi(`@import url('https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV,SHRP@100..900,0..1,0..100&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');`),
         a.vac(DEV) && E.script.chi(`navigator.serviceWorker.register('/sw.mjs')`),
-        // Md(`./data/anal.md`)
+        Md(`./data/anal.md`)
       ),
       E.body.chi(chi, 
         E.div.props({class: `popup`, id: `popup`}).chi(

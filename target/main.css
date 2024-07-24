@@ -23,8 +23,8 @@ header, footer, nav, a {
 header {
   justify-content: left;
   align-items: center;
-  width: 1980px;
-  max-width: 70%;
+  width: 1340px;
+  max-width: 90%;
   background-color: black;
   border-radius: 10px;
   margin: 2em 0 0 0;
@@ -50,7 +50,6 @@ header nav {
 }
 header a {
   padding: 0.2em 0.5em 0.2em 0.5em;
-  font-size: 1.1rem;
   color: white;
 }
 header a:hover {
@@ -88,30 +87,33 @@ header menu {
 header menu div {
   background-color: white;
   margin: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
+  width: 7px;
+  height: 7px;
+  border-radius: 1.5px;
 }
 header mobilemenu {
   display: none;
-  background-color: #000000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.4);
-  width: 50%;
+  background-color: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1);
+  width: 86%;
   position: fixed;
   flex-wrap: no-wrap;
   flex-direction: column;
-  align-items: left;
-  top: 0;
-  right: 0;
-  padding: 1vh;
-  height: 45vh;
+  top: 2em;
+  right: 5%;
+  padding: 2%;
+  border-radius: 10px;
   z-index: 1000;
 }
 header mobilemenu a {
   padding: 0.8em 0.8em;
   font-size: 1.2em;
-  border-bottom: 1px solid white;
   display: none;
+  color: white;
+  text-align: center;
+}
+header mobilemenu a:hover {
+  text-decoration: underline 2px solid white;
 }
 
 main {
@@ -134,8 +136,8 @@ heyibri {
   margin: 2.5em 0 5em 0;
   justify-content: flex-start;
   flex-direction: column;
-  width: 1600px;
-  max-width: 70%;
+  width: 1340px;
+  max-width: 90%;
 }
 heyibri img {
   width: 100%;
@@ -162,8 +164,8 @@ heyibri div {
 footer {
   flex-wrap: wrap;
   height: 22rem;
-  width: 2000px;
-  max-width: 70%;
+  width: 1340px;
+  max-width: 90%;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
@@ -202,8 +204,8 @@ footer span {
 }
 
 block {
-  width: 1600px;
-  max-width: 70%;
+  width: 1340px;
+  max-width: 90%;
   height: auto;
   border-radius: 10px;
   display: flex;
@@ -943,50 +945,6 @@ video::-moz-media-controls-start-playback-button {
   -appearance: none !important;
 }
 
-@media (max-width: 1500px) {
-  header nav menu {
-    display: flex;
-  }
-  header nav a:nth-last-child(-n+2) {
-    display: none;
-  }
-  mobilemenu a:nth-last-child(1) {
-    display: block;
-  }
-  footer div {
-    flex-direction: column;
-  }
-  footer nav {
-    flex-direction: row;
-  }
-  footer nav a {
-    padding: 0.3rem;
-  }
-}
-@media (max-width: 1100px) {
-  header nav a:nth-last-child(-n+3) {
-    display: none;
-  }
-  mobilemenu a:nth-last-child(2) {
-    display: block;
-  }
-}
-@media (max-width: 1000px) {
-  header nav a:nth-last-child(-n+4) {
-    display: none;
-  }
-  mobilemenu a:nth-last-child(3) {
-    display: block;
-  }
-}
-@media (max-width: 900px) {
-  header nav a:nth-last-child(-n+5) {
-    display: none;
-  }
-  mobilemenu a:nth-last-child(4) {
-    display: block;
-  }
-}
 @media (max-width: 800px) {
   header nav a:nth-last-child(-n+5) {
     display: none;
@@ -1021,6 +979,15 @@ video::-moz-media-controls-start-playback-button {
   header, footer {
     max-width: 90%;
   }
+  footer div {
+    flex-direction: column;
+  }
+  footer nav {
+    flex-direction: row;
+  }
+  footer nav a {
+    padding: 0.3rem;
+  }
   heyibri {
     width: 1600px;
     max-width: 90%;
@@ -1033,10 +1000,21 @@ video::-moz-media-controls-start-playback-button {
     justify-content: space-between;
   }
 }
+@media screen and (max-width: 1000px) {
+  header nav menu {
+    display: flex;
+  }
+  header nav a:nth-last-child(-n+8) {
+    display: none;
+  }
+  mobilemenu a:nth-child(n+1) {
+    display: block;
+  }
+}
 @media screen and (max-width: 860px) {
   heyibri {
     width: 90%;
-    margin: 0 0 0 0;
+    margin-bottom: 0;
   }
   heyibri h1 {
     font-size: 1.8em;
