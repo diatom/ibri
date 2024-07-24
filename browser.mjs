@@ -23,16 +23,20 @@ document.addEventListener('DOMContentLoaded', function() {
   const menuIcon = document.querySelector('menu')
   const mobileMenu = document.querySelector('mobilemenu')
   menuIcon.addEventListener('click', function() {
-    mobileMenu.style.display = `flex`
+    if (mobileMenu.style.display === 'flex') {
+      mobileMenu.style.display = 'none'
+    } else {
+      mobileMenu.style.display = 'flex'
+    }
   })
-  mobileMenu.addEventListener(`click`, (e) => {
+  mobileMenu.addEventListener('click', function(e) {
     if (e.target === mobileMenu) {
-        mobileMenu.style.display = `none`
+      mobileMenu.style.display = 'none'
     }
   })
   document.addEventListener('click', function(e) {
-    if (mobileMenu.style.display === 'flex' && e.target !== mobileMenu && e.target !== menuIcon) {
-      mobileMenu.style.display = 'none '
+    if (mobileMenu.style.display === 'flex' && e.target !== mobileMenu && !menuIcon.contains(e.target)) {
+      mobileMenu.style.display = 'none'
     }
   })
 })
