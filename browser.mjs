@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 // Popup image
-const images = document.querySelectorAll('article img, .cockt img, .spoiler img')
+const images = document.querySelectorAll('article img, .cockt img, .spoiler img, .content img, .mixology-img img, .i-ingri-img img')
 const popup = document.getElementById('popup')
 const popupImage = document.getElementById('popupImage')
 const closeBtn = document.getElementById('closeBtn')
