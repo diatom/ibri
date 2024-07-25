@@ -144,8 +144,8 @@ class PageIndex extends Page {
 }
 function getItem(a) {
   return a.map((val) => {
-    return E.div.props({class: ``}).chi(
-      E.img.props({src: val.src, alt: val.name, class: `i-ingri`}),
+    return E.div.props({class: `i-ingri`}).chi(
+      E.div.props({class: `i-ingri-img`}).chi(E.img.props({src: val.src, alt: val.name})),
       E.h3.chi(val.name)
     )
   })
