@@ -237,7 +237,7 @@ class PageBuy extends Page {
   body() {
     const tit = `Где купить`
     const desc = `Где купить Ибри.`
-    const img = `https://sirseverin.ru/images/ibri.jpg`
+    const img = `http://localhost:36584/images/ibri-bar.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
