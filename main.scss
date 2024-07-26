@@ -455,39 +455,75 @@ pattern {
     display: block;
     border-radius: 10px;
   }
-  table {
-    width: 100%;
-    text-align: center;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin: 0;
-    background-color: white;
-    td {
+  .brand-table {
+    table {
+      width: 100%;
+      text-align: center;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin: 0;
+      background-color: white;
+      td {
       border: 1px dotted #ccc;
       padding: 10px;
-    }
-    tbody {
+      }
+      tbody {
       text-align: left;
       img {
         width: 100%;
       }
-    }
-    th {
+      }
+      th {
       background-color: #ccc;
       color: #666;
       font-weight: bold;
       display: none;
-    }
-    tr > td:first-child {
+      }
+      tr > td:first-child {
       font-weight: bold;
       color: $second;
       width: 20%;
-    }
-    tr > td:nth-child(2) {
+      }
+      tr > td:nth-child(2) {
       font-weight: bold;
-    }
-    tr:nth-child(-n+3), tr:nth-child(7), tr:nth-child(8) {
+      }
+      tr:nth-child(-n+3), tr:nth-child(7), tr:nth-child(8) {
       background-color: rgb(230, 230, 230);
+      }
+    }
+  }
+  .buy-table {
+    table {
+      width: 100%;
+      text-align: center;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin: 0;
+      background-color: white;
+      td {
+        border: 1px dotted #ccc;
+        padding: 10px;
+      }
+      tbody {
+        text-align: left;
+      img {
+        width: 100%;
+      }
+      }
+      th {
+        background-color: #ccc;
+        font-weight: bold;
+      }
+      tr > td:first-child {
+        font-weight: bold;
+        width: 15%;
+      }
+      tr > td:nth-child(3) {
+        width: 30%;
+      }
+      tr:nth-child(even) {
+        background-color: rgb(230, 230, 230);
+      }
     }
   }
 }

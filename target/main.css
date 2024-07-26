@@ -453,7 +453,7 @@ pattern img {
   display: block;
   border-radius: 10px;
 }
-.content table {
+.content .brand-table table {
   width: 100%;
   text-align: center;
   border-collapse: collapse;
@@ -461,31 +461,63 @@ pattern img {
   margin: 0;
   background-color: white;
 }
-.content table td {
+.content .brand-table table td {
   border: 1px dotted #ccc;
   padding: 10px;
 }
-.content table tbody {
+.content .brand-table table tbody {
   text-align: left;
 }
-.content table tbody img {
+.content .brand-table table tbody img {
   width: 100%;
 }
-.content table th {
+.content .brand-table table th {
   background-color: #ccc;
   color: #666;
   font-weight: bold;
   display: none;
 }
-.content table tr > td:first-child {
+.content .brand-table table tr > td:first-child {
   font-weight: bold;
   color: #028001;
   width: 20%;
 }
-.content table tr > td:nth-child(2) {
+.content .brand-table table tr > td:nth-child(2) {
   font-weight: bold;
 }
-.content table tr:nth-child(-n+3), .content table tr:nth-child(7), .content table tr:nth-child(8) {
+.content .brand-table table tr:nth-child(-n+3), .content .brand-table table tr:nth-child(7), .content .brand-table table tr:nth-child(8) {
+  background-color: rgb(230, 230, 230);
+}
+.content .buy-table table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0;
+  background-color: white;
+}
+.content .buy-table table td {
+  border: 1px dotted #ccc;
+  padding: 10px;
+}
+.content .buy-table table tbody {
+  text-align: left;
+}
+.content .buy-table table tbody img {
+  width: 100%;
+}
+.content .buy-table table th {
+  background-color: #ccc;
+  font-weight: bold;
+}
+.content .buy-table table tr > td:first-child {
+  font-weight: bold;
+  width: 15%;
+}
+.content .buy-table table tr > td:nth-child(3) {
+  width: 30%;
+}
+.content .buy-table table tr:nth-child(even) {
   background-color: rgb(230, 230, 230);
 }
 
