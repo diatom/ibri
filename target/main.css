@@ -512,10 +512,6 @@ pattern img {
 }
 .content .buy-table table tr > td:first-child {
   font-weight: bold;
-  width: 15%;
-}
-.content .buy-table table tr > td:nth-child(3) {
-  width: 30%;
 }
 .content .buy-table table tr:nth-child(even) {
   background-color: rgb(230, 230, 230);
@@ -1145,12 +1141,15 @@ video::-moz-media-controls-start-playback-button {
     border-radius: 20px;
     background-color: white;
   }
-  .content table {
+  .content .brand-table table {
     font-size: 0.8em;
   }
-  .content table tr > td:nth-child(2) {
+  .content .brand-table table tr > td:nth-child(2) {
     font-weight: bold;
     width: 20%;
+  }
+  .content .buy-table table {
+    font-size: 0.7em;
   }
   .content img, .content video {
     width: 100%;

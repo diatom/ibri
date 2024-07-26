@@ -516,11 +516,11 @@ pattern {
       }
       tr > td:first-child {
         font-weight: bold;
-        width: 15%;
+        // width: 15%;
       }
-      tr > td:nth-child(3) {
-        width: 30%;
-      }
+      // tr > td:nth-child(3) {
+      //   width: 30%;
+      // }
       tr:nth-child(even) {
         background-color: rgb(230, 230, 230);
       }
@@ -1170,13 +1170,20 @@ video::-moz-media-controls-start-playback-button {
     // }
   }
   .content {
-    table {
-    font-size: 0.8em;
-    tr > td:nth-child(2) {
-      font-weight: bold;
-      width: 20%;
+    .brand-table {
+      table {
+      font-size: 0.8em;
+        tr > td:nth-child(2) {
+          font-weight: bold;
+          width: 20%;
+        }
+      }
     }
-  }
+    .buy-table {
+      table {
+        font-size: 0.7em;
+      }
+    }
   img, video {
     width: 100%;
   }
