@@ -134,7 +134,7 @@ class PageIndex extends Page {
               В нашей базе есть и другие коктейли, на основе других напитков`).props({class: `idea`}),
           ),
           E.div.props({class: `mixology-img`}).chi(
-            E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`})
+            E.img.props({src: `/images/ibri-mix.jpg`, alt: `Ibri`})
           )
         )
       ),
