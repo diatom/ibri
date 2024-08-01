@@ -98,7 +98,7 @@ class PageIndex extends Page {
       E.main.chi(
         E.heyibri.chi(
           // E.h1.chi(E.span.chi(`Ибри`), ` — это ещё и вкусный напиток`),
-          E.img.props({src: `/images/ibri.jpg`, alt: `Ibri`}),
+          E.img.props({src: `/images/ibri-title.jpg`, alt: `Ibri`}),
           E.div.chi(`Приветствуем тебя на сайте напитков Ибри! :)`)
         ),
         E.block.chi(
