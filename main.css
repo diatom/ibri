@@ -1111,6 +1111,9 @@ video::-moz-media-controls-start-playback-button {
   heyibri h1 {
     font-size: 1.8em;
   }
+  heyibri img {
+    height: 50vh;
+  }
 
   .error {
     width: 90%;
