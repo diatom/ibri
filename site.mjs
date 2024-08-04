@@ -69,7 +69,7 @@ class Page404 extends Page {
   body() {
     const tit = `Ошбика: 404`
     const desc = `Ошбика 404`
-    const img = `https://sirseverin.ru/images/404.jpg`
+    const img = `https://drinkibri.ru/images/404.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
@@ -92,7 +92,7 @@ class PageIndex extends Page {
   body() {
   const tit = `Ibri`
   const desc = `Ибри (Ibri) — авторские газированные напитки. Продукт бренда Ибри, идея Ибри.`
-  const img = `https://sirseverin.ru/images/ibri-title.jpg`
+  const img = `https://drinkibri.ru/images/ibri-title.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
@@ -162,7 +162,7 @@ class PageIdea extends Page {
   body() {
     const tit = `О бренде`
     const desc = `Идея компании, история компании Ибри.`
-    const img = `https://sirseverin.ru/images/ibri-title.jpg`
+    const img = `https://drinkibri.ru/images/ibri-title.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
@@ -184,7 +184,7 @@ class PageProduct extends Page {
   body() {
     const tit = `Продукт`
     const desc = `Ибри Классический. Ибри Имбирный. Ибри Русский.`
-    const img = `https://sirseverin.ru/images/ibri-title.jpg`
+    const img = `https://drinkibri.ru/images/ibri-title.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
@@ -217,7 +217,7 @@ class PageCoop extends Page {
   body() {
     const tit = `Сотрудничество`
     const desc = `Сотрудничество с Ибри. Закупки. Информация для инвесторов.`
-    const img = `https://sirseverin.ru/images/ibri-title.jpg`
+    const img = `https://drinkibri.ru/images/ibri-title.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
@@ -237,7 +237,7 @@ class PageBuy extends Page {
   body() {
     const tit = `Где купить`
     const desc = `Где купить Ибри.`
-    const img = `http://localhost:36584/images/ibri-bar.jpg`
+    const img = `http://drinkibri.ru/images/ibri-bar.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
@@ -257,7 +257,7 @@ class PagePost extends Page {
   body() {
     const tit = `Новости`
     const desc = `Новости компании, мероприятия, статьи.`
-    const img = `https://sirseverin.ru/images/ibri-title.jpg`
+    const img = `https://drinkibri.ru/images/ibri-title.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
@@ -297,7 +297,7 @@ class PageArticle extends Page {
     body() {
     const tit = this.arti.h3
     const desc = this.arti.p
-    const img = `https://sirseverin.ru/` + this.arti.src
+    const img = `https://drinkibri.ru/` + this.arti.src
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
@@ -326,7 +326,7 @@ class PageMix extends Page {
     const acheese =  Deno.readTextFileSync(`./data/cheese.md`)
     const tit = `Миксология`
     const desc = `Рецепты коктейлей с напитками Ибри и не только с ними.`
-    const img = `https://sirseverin.ru/images/ibri-title.jpg`
+    const img = `https://drinkibri.ru/images/ibri-title.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
@@ -420,8 +420,8 @@ function Layout(tit, desc, img, ...chi) {
         E.meta.props({property: `og:title`, content: tit}),
         E.meta.props({property: `og:description`, content: desc}),
         E.meta.props({property: `og:type`, content: `website`}),
-        E.meta.props({property: `og:site_name`, content: `sirseverin.ru`}),
-        E.meta.props({property: `og:url`, content: `https://sirseverin.ru/`}),
+        E.meta.props({property: `og:site_name`, content: `drinkibri.ru`}),
+        E.meta.props({property: `og:url`, content: `https://drinkibri.ru/`}),
         E.meta.props({property: `og:image`, content: img}),
         E.meta.props({property: `og:image:height`, content: `600`}),
         E.meta.props({property: `og:image:width`, content: `300`}),
