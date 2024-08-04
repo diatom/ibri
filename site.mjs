@@ -319,14 +319,14 @@ function Articles(site) {
 
 // Mixology //
 class PageMix extends Page {
-  urlPath() {return `/mixology-title`}
+  urlPath() {return `/mixology`}
   title() {return `Миксология`}
 
   body() {
     const acheese =  Deno.readTextFileSync(`./data/cheese.md`)
     const tit = `Миксология`
     const desc = `Рецепты коктейлей с напитками Ибри и не только с ними.`
-    const img = `https://sirseverin.ru/images/ibri.jpg`
+    const img = `https://sirseverin.ru/images/ibri-title.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
