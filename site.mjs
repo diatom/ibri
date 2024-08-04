@@ -130,8 +130,7 @@ class PageIndex extends Page {
           E.div.props({class: `block-info`}).chi(
             E.h2.chi(`Миксология`),
             E.a.props({href: `/mixology`}).chi(`Подробнее`),
-            E.div.chi(`Качественная основа напитков Ибри делает их прекрасной основой для коктелей. 
-              В нашей базе есть и другие коктейли, на основе других напитков`).props({class: `idea`}),
+            E.div.chi(`Качественная основа напитков Ибри делает их прекрасной основой для коктелей`).props({class: `idea`}),
           ),
           E.div.props({class: `mixology-img`}).chi(
             E.img.props({src: `/images/ibri-mix.jpg`, alt: `Ibri`})
@@ -345,7 +344,7 @@ class PageMix extends Page {
             E.label.props({for: `searchInput`}),
             // E.label.props({for: `searchInput`}).chi(`Рецепты коктейлей`),
             E.div.chi(
-              E.input.props({type: `text`, id: `searchInput`, placeholder: `Коктейль, ингридиент, напиток...`}),
+              E.input.props({type: `text`, id: `searchInput`, placeholder: `Поиск`}),
               E.button.props({id: `searchButton`, type: `submit`}).chi(
                 E.img.props({src: `/images/search.svg`, alt: `s`, class: `img-svg`})
               )
