@@ -10,16 +10,16 @@ export const brand = [
     {name: `Ягоды`, src: `/images/berry.jpg`}
 ]
 export const pro = [
-    {name: 'Ибри Классический', src: '/images/ibri-bottle.png', href: '/product#ibric', id: 'ibric',
+    {name: 'Ибри', src: '/images/ibri-c.png', href: '/product#ibric', id: 'ibric',
         desc: `Классичесский вкус Ибри. Чувствуются травы, корица, мускат.`,
         ingri: `вода, сахар, мускатный орех, корица, элеутерококк, корень солодки, мелисса, чабрец, натуральный краситель сахарный колер.`
     },
-    {name: 'Ибри Имбирный', src: '/images/ibri-bottle.png', href: '/product#ibrii', id: 'ibrii',
+    {name: 'Ибри Имбирный', src: '/images/ibri-i.png', href: '/product#ibrii', id: 'ibrii',
         desc: `Чтобы приготовить этот напиток ибмирная основа бродит несколько дней, благодаря чему напиток приобретает благородный освежающий вкус.
         Острота имбиря и аромат можжевельника`,
         ingri: `вода, сахар, имбирь, можжевельник, дрожжи, соль.`
     },
-    {name: 'Ибри Русский', src: '/images/ibri-bottle.png', href: '/product#ibrir', id: 'ibrir',
+    {name: 'Ибри Русский', src: '/images/ibri-r.png', href: '/product#ibrir', id: 'ibrir',
         desc: `В составе использованы только те ингридиенты, которые растут и делаются в России. Полностью локальный напиток. 
         Травяной вкус, который дополняет приятная терпкость пихты и можжевельника. 
         Гордись тем, что пьёшь Русский :D`,

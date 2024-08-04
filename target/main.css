@@ -141,7 +141,7 @@ heyibri {
 }
 heyibri img {
   width: 100%;
-  max-height: 600px;
+  max-height: 650px;
   object-fit: cover;
   border-radius: 10px;
 }

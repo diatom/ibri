@@ -92,7 +92,7 @@ class PageIndex extends Page {
   body() {
   const tit = `Ibri`
   const desc = `Ибри (Ibri) — авторские газированные напитки. Продукт бренда Ибри, идея Ибри.`
-  const img = `https://sirseverin.ru/images/ibri.jpg`
+  const img = `https://sirseverin.ru/images/ibri-title.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
@@ -162,7 +162,7 @@ class PageIdea extends Page {
   body() {
     const tit = `О бренде`
     const desc = `Идея компании, история компании Ибри.`
-    const img = `https://sirseverin.ru/images/ibri.jpg`
+    const img = `https://sirseverin.ru/images/ibri-title.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
@@ -184,7 +184,7 @@ class PageProduct extends Page {
   body() {
     const tit = `Продукт`
     const desc = `Ибри Классический. Ибри Имбирный. Ибри Русский.`
-    const img = `https://sirseverin.ru/images/ibri.jpg`
+    const img = `https://sirseverin.ru/images/ibri-title.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
@@ -217,7 +217,7 @@ class PageCoop extends Page {
   body() {
     const tit = `Сотрудничество`
     const desc = `Сотрудничество с Ибри. Закупки. Информация для инвесторов.`
-    const img = `https://sirseverin.ru/images/ibri.jpg`
+    const img = `https://sirseverin.ru/images/ibri-title.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
@@ -257,7 +257,7 @@ class PagePost extends Page {
   body() {
     const tit = `Новости`
     const desc = `Новости компании, мероприятия, статьи.`
-    const img = `https://sirseverin.ru/images/ibri.jpg`
+    const img = `https://sirseverin.ru/images/ibri-title.jpg`
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
@@ -319,7 +319,7 @@ function Articles(site) {
 
 // Mixology //
 class PageMix extends Page {
-  urlPath() {return `/mixology`}
+  urlPath() {return `/mixology-title`}
   title() {return `Миксология`}
 
   body() {
@@ -426,7 +426,7 @@ function Layout(tit, desc, img, ...chi) {
         E.meta.props({property: `og:image:height`, content: `600`}),
         E.meta.props({property: `og:image:width`, content: `300`}),
         E.meta.props({property: `og:image:type`, content: `image/jpeg`}),
-        E.link.props({rel: `icon`, type: `image/x-icon`, href: `/images/icon-svg.svg`}),
+        E.link.props({rel: `icon`, type: `image/x-icon`, href: `/images/ibri-icon.png`}),
         E.link.props({rel: `stylesheet`, href: `/main.css`}),
         E.style.chi(`@import url('https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV,SHRP@100..900,0..1,0..100&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');`),
         a.vac(DEV) && E.script.chi(`navigator.serviceWorker.register('/sw.mjs')`),
