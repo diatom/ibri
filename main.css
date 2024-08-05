@@ -695,11 +695,6 @@ article img {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-article img:hover {
-  -moz-transform: scale(1.03);
-  -webkit-transform: scale(1.03);
-  transform: scale(1.03);
-}
 article a {
   color: var(--text-color);
   display: inline;
