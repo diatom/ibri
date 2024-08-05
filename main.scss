@@ -698,9 +698,9 @@ article {
     border-radius: 5px;
     @include img-styles($transition-duration)
   }
-  img:hover {
-    @include hover-transform($hover-scale)
-  }
+  // img:hover {
+  //   @include hover-transform($hover-scale)
+  // }
   a {
     color: var(--text-color);
     display: inline;
