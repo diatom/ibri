@@ -197,7 +197,7 @@ class PageProduct extends Page {
                   E.a.props({href: `/wherebuy`, class: `a-buy`}).chi(`Купить`),
                   E.button.props({class: `a-cockt`, id: val.id}).chi(`Коктейли`),
                   E.p.chi(val.desc),
-                  E.p.chi(`Ингридиенты: ` + val.ingri),
+                  E.p.chi(`Ингредиенты: ` + val.ingri),
                 )
               )
             })
