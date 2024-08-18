@@ -54,7 +54,7 @@ export let c = [
         `Долить имбирный Ибри доверху стакана и аккуратно размешать коктейльной ложкой`,
       ],
       tags: [`ибри имбирный`, `виски`, `лимон`],
-      img: `/images/cocktails/ibri.jpg`,
+      img: `/images/cocktails/imbirniy-whiskey.jpg`,
     },
     {
       num: 3,
