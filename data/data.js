@@ -1,7 +1,8 @@
 export const contact = [
     {'bogucharskiy.s@yandex.ru': `mailto: bogucharskiy.s@yandex.ru`},
     {'Telegram: @Severinz': `https://telegram.me/Severinz`},
-    {'+7 (903) 186-93-32': `tel:+79031869332`}
+    {'+7 (903) 186-93-32': `tel:+79031869332`},
+    {'Промо-презентация': `https://drinkibri.ru/ibri-present.pdf`}
 ]
 export const brand = [
     {name: `Корни`, src: `/images/root.jpg`},
