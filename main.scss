@@ -322,22 +322,27 @@ block {
 pattern {
   width: 100%;
   max-width: 3000px;
-  background-color: $primary;
+  // background-color: $primary;
   justify-content: center;
   display: flex;
-  margin: 5em 0;
+  margin: 8em 0;
+  overflow: hidden;
   div {
-    width: 90%;
-    margin: 4% 2%;
+    // width: 90%;
+    width: 160%;
+    margin: -2em -20em;
+    // margin: 4% 2%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 0.7em;
+    // gap: 0.7em;
+    gap: 2em;
     overflow: hidden;
-    height: 16em;
+    // height: 16em;
+    height: 34em;
   }
   img {
-    width: 55px;
+    width: 300px;
   }
 }
 .units-pro {
@@ -1171,6 +1176,9 @@ video::-moz-media-controls-start-playback-button {
     // .units-pro > .u-pro:nth-child(n+3) {
     //   background-color: #ffb7b4;
     // }
+  }
+  pattern {
+    display: none;
   }
   .content {
     .brand-table {

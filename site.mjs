@@ -150,7 +150,7 @@ function getItem(a) {
   })
 }
 function getIbri() {
-  return Array.from({ length: 200 }, () => E.img.props({src: `/images/ibri-logo-white.svg`, alt: `ibri`}))
+  return Array.from({ length: 200 }, () => E.img.props({src: `/images/ibri-logo-purple.svg`, alt: `ibri`}))
 }
 
 // Idea //

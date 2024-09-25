@@ -297,23 +297,23 @@ block .idea a {
 pattern {
   width: 100%;
   max-width: 3000px;
-  background-color: #3A7189;
   justify-content: center;
   display: flex;
-  margin: 5em 0;
+  margin: 8em 0;
+  overflow: hidden;
 }
 pattern div {
-  width: 90%;
-  margin: 4% 2%;
+  width: 160%;
+  margin: -2em -20em;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.7em;
+  gap: 2em;
   overflow: hidden;
-  height: 16em;
+  height: 34em;
 }
 pattern img {
-  width: 55px;
+  width: 300px;
 }
 
 .units-pro {
@@ -1138,6 +1138,9 @@ video::-moz-media-controls-start-playback-button {
     margin: 1em 0;
     border-radius: 20px;
     background-color: white;
+  }
+  pattern {
+    display: none;
   }
   .content .brand-table table {
     font-size: 0.8em;
