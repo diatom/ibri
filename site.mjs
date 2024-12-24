@@ -322,7 +322,7 @@ class PageMix extends Page {
   title() {return `Миксология`}
 
   body() {
-    const acheese =  Deno.readTextFileSync(`./data/cheese.md`)
+    // const acheese =  Deno.readTextFileSync(`./data/cheese.md`)
     const tit = `Миксология`
     const desc = `Рецепты коктейлей с напитками Ибри и не только с ними.`
     const img = `https://drinkibri.ru/images/ibri-title.jpg`
