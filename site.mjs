@@ -322,7 +322,6 @@ class PageMix extends Page {
   title() {return `Миксология`}
 
   body() {
-    // const acheese =  Deno.readTextFileSync(`./data/cheese.md`)
     const tit = `Миксология`
     const desc = `Рецепты коктейлей с напитками Ибри и не только с ними.`
     const img = `https://drinkibri.ru/images/ibri-title.jpg`
@@ -331,18 +330,8 @@ class PageMix extends Page {
       E.main.chi(
         E.h1.chi(`Коктейли`),
         E.div.props({class: `info-cockt`}).chi(
-          // E.div.props({class: `spoiler`}).chi(
-          //   E.div.props({class: `spoiler-header`}).chi(
-          //     E.span.props({class: `toggle-icon`}).chi(`▶`),
-          //     E.p.chi(`Нажми чтобы прочитать подробности`),
-          //   ),
-          //   E.div.props({class: `spoiler-content`}).chi(
-          //     new p.Raw(marked(acheese))
-          //   ),
-          // ),
           E.search.chi(
             E.label.props({for: `searchInput`}),
-            // E.label.props({for: `searchInput`}).chi(`Рецепты коктейлей`),
             E.div.chi(
               E.input.props({type: `text`, id: `searchInput`, placeholder: `Поиск`}),
               E.button.props({id: `searchButton`, type: `submit`}).chi(
